@@ -1,13 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
+import React from 'react'
 
-import "./services/firebase";
-import "./style/global.scss";
+import ReactDOM from 'react-dom'
+import App from './App'
+
+import './services/firebase'
+import './styles/global/global.scss'
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  document.getElementById("root")
-);
+  document.getElementById('root')
+)
