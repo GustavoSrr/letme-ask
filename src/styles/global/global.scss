@@ -2,8 +2,11 @@
   --primaryColor: #55A9E7;
   --primaryColorHover: #4C98CF;
   --primaryColorTransparent: rgba(85, 169, 231, 0.15);
+  --primaryFocusColorTransparent: rgba(85, 169, 231, 0.25);
   --secundaryColor: #E86DE1;
+  --secundaryColorHover: #CF61C9;
   --secundaryColorTransparent: rgba(232, 109, 225, 0.15);
+  --secundaryFocusColorTransparent: rgba(232, 109, 225, 0.25);
 
   --grayColor: #d5d5d5;
   --blueColor: #206CE8;
@@ -50,6 +53,15 @@ textarea {
 h1 {
   font-family: 'Ubuntu', sans-serif;
   font-size: 24px;
+  color: var(--textBlackColor);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+label {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
   color: var(--textBlackColor);
   margin-top: 10px;
   margin-bottom: 10px;

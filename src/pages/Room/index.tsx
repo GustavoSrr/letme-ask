@@ -67,13 +67,15 @@ export function Room () {
       <main className="Content">
         <div className="RoomTitle">
           <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta(s)</span>}
+          {questions.length === 1 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta</span>}
+          {questions.length > 1 && <span>{questions.filter(q => q.isAnswered === false).length} perguntas</span>}
         </div>
         <form onSubmit={handleSendQuestion}>
           <textarea
             placeholder="O que você quer perguntar?"
             value={newQuestion}
             required
+            maxLength={2000}
             onChange={(event) => setNewQuestion(event.target.value)}
           />
           <div id="FormFooter">
@@ -95,6 +97,14 @@ export function Room () {
             </Button>
           </div>
         </form>
+        <div className="Options">
+          <label>Ordenado por</label>
+          <select name="Options" className="SelectOptions">
+            <option value="Latest">Mais recentes</option>
+            <option value="Oldest">Mais antigos</option>
+            <option value="MostLiked">Curtidas</option>
+          </select>
+        </div>
         {/* Perguntas destacadas */}
         <div className="QuestionList">
           {questions.filter(q => q.isHightlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}

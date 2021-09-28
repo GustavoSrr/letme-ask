@@ -121,10 +121,10 @@
         padding: 8px;
 
         &:hover {
-        background-color: var(--primaryColorTransparent);
+        background-color: var(--secundaryColorTransparent);
 
         svg path {
-          stroke: var(--primaryColor);
+          stroke: var(--secundaryColor);
         }
       }
       }

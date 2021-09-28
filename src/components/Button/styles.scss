@@ -32,14 +32,14 @@
 
   &.transparent {
     background-color: transparent;
-    color: var(--primaryColor);
+    color: var(--secundaryColor);
 
     &:hover {
-      background-color: var(--primaryColorTransparent);
+      background-color: var(--secundaryColorTransparent);
     }
 
     &:active {
-      background-color: rgba(131, 90, 253, 0.25);
+      background-color: var(--secundaryFocusColorTransparent);
     }
   }
 

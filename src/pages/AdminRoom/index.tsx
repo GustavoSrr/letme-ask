@@ -72,7 +72,8 @@ export function AdminRoom () {
       <main className="Content">
         <div className="RoomTitle">
           <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta(s)</span>}
+          {questions.length === 1 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta</span>}
+          {questions.length > 1 && <span>{questions.filter(q => q.isAnswered === false).length} perguntas</span>}
         </div>
         {/* Perguntas destacadas */}
         <div className="QuestionList">
