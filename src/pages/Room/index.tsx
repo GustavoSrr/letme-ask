@@ -18,7 +18,7 @@ type RoomParams = {
   id: string
 }
 
-export function Room() {
+export function Room () {
   const { user } = useAuth()
 
   const params = useParams<RoomParams>()
@@ -27,7 +27,7 @@ export function Room() {
   const roomId = params.id
   const { questions, title } = useRoom(roomId)
 
-  async function handleSendQuestion(event: FormEvent) {
+  async function handleSendQuestion (event: FormEvent) {
     event.preventDefault()
 
     if (newQuestion.trim() === '') return
@@ -46,7 +46,7 @@ export function Room() {
     setNewQuestion('')
   }
 
-  async function handleLikeQuestion(questionId: string, likeId: string | undefined) {
+  async function handleLikeQuestion (questionId: string, likeId: string | undefined) {
     if (likeId) {
       await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove()
     } else {
@@ -85,10 +85,10 @@ export function Room() {
                   <img src={user.avatar} alt={user.name} />
                   <span>{user.name}</span>
                 </div>
-              )
+                )
               : (
                 <span>Para enviar uma pergunta <button>faça o login</button>.</span>
-              )
+                )
             }
             <Button type="submit" disabled={!user} rounded transparent >
               <svg height="20" width="20" aria-hidden="true" focusable="false" data-prefix="far" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -110,8 +110,8 @@ export function Room() {
           {questions.filter(q => q.isHightlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
           {questions
             ? (
-              questions.filter(question => question.isHightlighted === true && question.isAnswered === false).reverse().map(quest => {
-                return (
+                questions.filter(question => question.isHightlighted === true && question.isAnswered === false).reverse().map(quest => {
+                  return (
                   <Question
                     content={quest.content}
                     author={quest.author}
@@ -128,9 +128,9 @@ export function Room() {
                       </button>
                     )}
                   </Question>
-                )
-              })
-            )
+                  )
+                })
+              )
             : ('')}
         </div>
         {/* Todas perguntas */}
@@ -138,8 +138,8 @@ export function Room() {
           {questions.filter(q => q.isHightlighted === false && q.isAnswered === false).length > 0 && <h1>Todas perguntas</h1>}
           {questions[0]
             ? (
-              questions.filter(question => question.isHightlighted === false && question.isAnswered === false).reverse().map(quest => {
-                return (
+                questions.filter(question => question.isHightlighted === false && question.isAnswered === false).reverse().map(quest => {
+                  return (
                   <Question
                     content={quest.content}
                     author={quest.author}
@@ -156,22 +156,22 @@ export function Room() {
                       </button>
                     )}
                   </Question>
-                )
-              }))
+                  )
+                }))
             : (
               <div className="NoQuestions">
                 <img src={EmptyQuestions} alt="Sem perguntas" />
                 <h1>Nenhuma pergunta por aqui...</h1>
                 <p>Faça uma pergunta e seja a primeira pessoa a ser respondida na sala!</p>
               </div>
-            )}
+              )}
         </div>
         {/* Perguntas respondidas */}
         <div className="QuestionList">
           {questions
             ? (
-              questions.filter(question => question.isHightlighted === false && question.isAnswered === true).reverse().map(quest => {
-                return (
+                questions.filter(question => question.isHightlighted === false && question.isAnswered === true).reverse().map(quest => {
+                  return (
                   <Question
                     content={quest.content}
                     author={quest.author}
@@ -179,8 +179,8 @@ export function Room() {
                     isHightlighted={quest.isHightlighted}
                     key={quest.id}
                   />
-                )
-              }))
+                  )
+                }))
             : ('')}
         </div>
       </main>

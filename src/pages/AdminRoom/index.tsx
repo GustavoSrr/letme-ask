@@ -17,20 +17,20 @@ type RoomParams = {
   id: string
 }
 
-export function AdminRoom() {
+export function AdminRoom () {
   const history = useHistory()
   const params = useParams<RoomParams>()
   const roomId = params.id
 
   const { questions, title } = useRoom(roomId)
 
-  async function handleCheckQuestionAsAnswered(questionId: string) {
+  async function handleCheckQuestionAsAnswered (questionId: string) {
     await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
       isAnswered: true
     })
   }
 
-  async function handleHightlightQuestion(questionId: string) {
+  async function handleHightlightQuestion (questionId: string) {
     const getQuestion = await database.ref(`rooms/${roomId}/questions/${questionId}`).get()
 
     if ((await getQuestion).val().isHightlighted === false) {
@@ -44,13 +44,13 @@ export function AdminRoom() {
     }
   }
 
-  async function handleDeleteQuestion(questionId: string) {
+  async function handleDeleteQuestion (questionId: string) {
     if (window.confirm('Tem certeza que deseja excluir essa pergunta?')) {
       await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
     }
   }
 
-  async function handleEndRoom() {
+  async function handleEndRoom () {
     database.ref(`rooms/${roomId}`).update({
       endedAt: new Date()
     })
@@ -80,8 +80,8 @@ export function AdminRoom() {
           {questions.filter(q => q.isHightlighted === true).length > 0 && <h1>Perguntas Destacadas</h1>}
           {questions
             ? (
-              questions.filter(question => question.isHightlighted === true).reverse().map(quest => {
-                return (
+                questions.filter(question => question.isHightlighted === true).reverse().map(quest => {
+                  return (
                   <Question content={quest.content}
                     author={quest.author}
                     isAnswered={quest.isAnswered}
@@ -110,12 +110,12 @@ export function AdminRoom() {
                       </svg>
                     </button>
                   </Question>
-                )
-              })
-            )
+                  )
+                })
+              )
             : (
-              ''
-            )
+                ''
+              )
           }
         </div>
         {/* Todas perguntas */}
@@ -123,8 +123,8 @@ export function AdminRoom() {
           {questions.filter(q => q.isHightlighted === false).length > 0 && <h1>Todas perguntas</h1>}
           {questions[0]
             ? (
-              questions.filter(question => question.isHightlighted === false && question.isAnswered === false).reverse().map(quest => {
-                return (
+                questions.filter(question => question.isHightlighted === false && question.isAnswered === false).reverse().map(quest => {
+                  return (
                   <Question content={quest.content}
                     author={quest.author}
                     isAnswered={quest.isAnswered}
@@ -153,23 +153,23 @@ export function AdminRoom() {
                       </svg>
                     </button>
                   </Question>
-                )
-              })
-            )
+                  )
+                })
+              )
             : (
               <div className="NoQuestions">
                 <img src={EmptyQuestions} alt="Sem perguntas" />
                 <h1>Nenhuma pergunta por aqui...</h1>
                 <p>Compartilhe o código desta sala com seus amigos e começe a responder perguntas!</p>
               </div>
-            )}
+              )}
         </div>
         {/* Perguntas respondidas */}
         <div className="QuestionList">
           {questions
             ? (
-              questions.filter(question => question.isHightlighted === false && question.isAnswered === true).reverse().map(quest => {
-                return (
+                questions.filter(question => question.isHightlighted === false && question.isAnswered === true).reverse().map(quest => {
+                  return (
                   <Question
                     content={quest.content}
                     author={quest.author}
@@ -177,8 +177,8 @@ export function AdminRoom() {
                     isHightlighted={quest.isHightlighted}
                     key={quest.id}
                   />
-                )
-              }))
+                  )
+                }))
             : ('')}
         </div>
       </main>

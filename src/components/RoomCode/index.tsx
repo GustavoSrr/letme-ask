@@ -10,8 +10,8 @@ type RoomCodeProps = {
   code: string
 }
 
-export function RoomCode(props: RoomCodeProps) {
-  function CopyCodeToClipboard() {
+export function RoomCode (props: RoomCodeProps) {
+  function CopyCodeToClipboard () {
     navigator.clipboard.writeText(props.code)
   }
 

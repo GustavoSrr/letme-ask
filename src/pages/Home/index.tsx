@@ -11,19 +11,19 @@ import { Button } from '../../components/Button/index'
 
 import { database } from '../../services/firebase'
 
-export function Home() {
+export function Home () {
   const history = useHistory()
   const { user, signInGoogle } = useAuth()
   const [roomCode, setRoomCode] = useState('')
 
-  async function handleCreateRoom() {
+  async function handleCreateRoom () {
     if (!user) {
       await signInGoogle()
     }
     history.push('/rooms/new')
   }
 
-  async function handleJoinRoom(event: FormEvent) {
+  async function handleJoinRoom (event: FormEvent) {
     event.preventDefault()
 
     if (roomCode.trim() === '') return
