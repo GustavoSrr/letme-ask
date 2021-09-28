@@ -10,7 +10,7 @@ import { NotFound } from './pages/NotFound/index'
 
 import { AuthContextProvider } from './contexts/AuthContext'
 
-function App () {
+function App() {
   return (
     <BrowserRouter>
       <AuthContextProvider>

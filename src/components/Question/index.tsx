@@ -14,7 +14,7 @@ type QuestionProps = {
   isHightlighted?: boolean
 }
 
-export function Question ({
+export function Question({
   content,
   author,
   children,

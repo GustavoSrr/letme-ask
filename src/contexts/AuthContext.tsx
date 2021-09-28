@@ -18,7 +18,7 @@ type AuthContextProviderProps = {
 
 export const authContext = createContext({} as AuthContextType)
 
-export function AuthContextProvider (props: AuthContextProviderProps) {
+export function AuthContextProvider(props: AuthContextProviderProps) {
   const [user, setUser] = useState<User>()
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export function AuthContextProvider (props: AuthContextProviderProps) {
     }
   }, [])
 
-  async function signInGoogle () {
+  async function signInGoogle() {
     const provider = new firebase.auth.GoogleAuthProvider()
 
     const res = await auth.signInWithPopup(provider)

@@ -6,6 +6,6 @@ type BtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   rounded?: boolean,
   transparent?: boolean
 };
-export function Button ({ outlined = false, rounded = false, transparent = false, ...props }: BtnProps) {
+export function Button({ outlined = false, rounded = false, transparent = false, ...props }: BtnProps) {
   return <button className={`Button ${outlined ? 'outline' : ''} ${rounded ? 'round' : ''} ${transparent ? 'transparent' : ''}`} {...props} />
 }

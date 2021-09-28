@@ -3,32 +3,32 @@ import { database } from '../services/firebase'
 import { useAuth } from './useAuth'
 
 type firebaseQuestionsType = Record<string, {
-    author: {
-        name: string,
-        avatar: string
-    },
-    content: string,
-    isHightlighted: boolean,
-    isAnswered: boolean
-    likes: Record<string, {
-        authorId: string
-    }>
+  author: {
+    name: string,
+    avatar: string
+  },
+  content: string,
+  isHightlighted: boolean,
+  isAnswered: boolean
+  likes: Record<string, {
+    authorId: string
+  }>
 }>
 
-type QuestionType= {
-    id: string,
-    author: {
-        name: string,
-        avatar: string
-    },
-    content: string,
-    isHightlighted: boolean,
-    isAnswered: boolean,
-    likeCount: number,
-    likeId: string | undefined
+type QuestionType = {
+  id: string,
+  author: {
+    name: string,
+    avatar: string
+  },
+  content: string,
+  isHightlighted: boolean,
+  isAnswered: boolean,
+  likeCount: number,
+  likeId: string | undefined
 }
 
-export function useRoom (roomId: string) {
+export function useRoom(roomId: string) {
   const { user } = useAuth()
 
   const [questions, setQuestions] = useState<QuestionType[]>([])

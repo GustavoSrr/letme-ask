@@ -10,15 +10,15 @@ type RoomCodeProps = {
   code: string
 }
 
-export function RoomCode (props: RoomCodeProps) {
-  function CopyCodeToClipboard () {
+export function RoomCode(props: RoomCodeProps) {
+  function CopyCodeToClipboard() {
     navigator.clipboard.writeText(props.code)
   }
 
   return (
     <div className="RoomCode">
       <Button rounded onClick={CopyCodeToClipboard} title="Compartilhar">
-        <img className="Share" src={share} alt="Compartillhar" title="Compartilhar"/>
+        <img className="Share" src={share} alt="Compartillhar" title="Compartilhar" />
       </Button>
       <div className="RoomCodeContent">
         <ul>

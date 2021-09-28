@@ -11,12 +11,12 @@ import Logo from '../../assets/images/logo.svg'
 
 import './styles.scss'
 
-export function NewRoom () {
+export function NewRoom() {
   const { user } = useAuth()
   const history = useHistory()
   const [newRoom, setNewRoom] = React.useState('')
 
-  async function handleCreateRoom (event: React.FormEvent) {
+  async function handleCreateRoom(event: React.FormEvent) {
     event.preventDefault()
 
     if (newRoom.trim() === '') return
