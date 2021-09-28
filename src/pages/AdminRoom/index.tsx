@@ -11,7 +11,7 @@ import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
 import { database } from '../../services/firebase'
 
-import '../../styles/global/rooms.scss'
+import { Container, Content, Main, Title, QuestionList, NoQuestions } from './styles'
 
 type RoomParams = {
   id: string
@@ -59,28 +59,28 @@ export function AdminRoom () {
   }
 
   return (
-    <div id="RoomPage">
+    <Container>
       <header>
-        <div className="Content">
+        <Content>
           <img src={Logo} alt="Logo" />
           <div>
             <RoomCode code={roomId} />
             <Button outlined onClick={handleEndRoom}>Encerrar sala</Button>
           </div>
-        </div>
+        </Content>
       </header>
-      <main className="Content">
-        <div className="RoomTitle">
+      <Main>
+        <Title>
           <h1>Sala {title}</h1>
           {questions.length === 1 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta</span>}
           {questions.length > 1 && <span>{questions.filter(q => q.isAnswered === false).length} perguntas</span>}
-        </div>
+        </Title>
         {/* Perguntas destacadas */}
-        <div className="QuestionList">
-          {questions.filter(q => q.isHightlighted === true).length > 0 && <h1>Perguntas Destacadas</h1>}
+        <QuestionList>
+          {questions.filter(q => q.isHightlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
           {questions
             ? (
-                questions.filter(question => question.isHightlighted === true).reverse().map(quest => {
+                questions.filter(question => question.isHightlighted === true && question.isAnswered === false).reverse().map(quest => {
                   return (
                   <Question content={quest.content}
                     author={quest.author}
@@ -117,9 +117,9 @@ export function AdminRoom () {
                 ''
               )
           }
-        </div>
+        </QuestionList>
         {/* Todas perguntas */}
-        <div className="QuestionList">
+        <QuestionList>
           {questions.filter(q => q.isHightlighted === false).length > 0 && <h1>Todas perguntas</h1>}
           {questions[0]
             ? (
@@ -157,18 +157,18 @@ export function AdminRoom () {
                 })
               )
             : (
-              <div className="NoQuestions">
+              <NoQuestions>
                 <img src={EmptyQuestions} alt="Sem perguntas" />
                 <h1>Nenhuma pergunta por aqui...</h1>
                 <p>Compartilhe o código desta sala com seus amigos e começe a responder perguntas!</p>
-              </div>
+              </NoQuestions>
               )}
-        </div>
+        </QuestionList>
         {/* Perguntas respondidas */}
-        <div className="QuestionList">
+        <QuestionList>
           {questions
             ? (
-                questions.filter(question => question.isHightlighted === false && question.isAnswered === true).reverse().map(quest => {
+                questions.filter(question => question.isAnswered === true).reverse().map(quest => {
                   return (
                   <Question
                     content={quest.content}
@@ -180,8 +180,8 @@ export function AdminRoom () {
                   )
                 }))
             : ('')}
-        </div>
-      </main>
-    </div>
+        </QuestionList>
+      </Main>
+    </Container>
   )
 }

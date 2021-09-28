@@ -2,16 +2,16 @@ import React from 'react'
 
 import Arrow from '../../assets/images/arrow.svg'
 
-import './styles.scss'
+import { Container } from './styles'
 
-export function NotFound () {
+export const NotFound: React.FC = () => {
   return (
-    <div id="NotFoundPage">
-      <h1>Página não encontrada.</h1>
+    <Container>
+      <h1>Página não encontrada</h1>
       <a href="/">
-        <img src={Arrow} alt="Seta" />
+        <img src={Arrow} alt="Seta"/>
         Voltar para home
       </a>
-    </div>
+    </Container>
   )
 }
