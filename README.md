@@ -28,10 +28,7 @@
 
 ## ➕ Adiciões feitas
 
-[x] 📼 | Variáveis para cores no Css
-
-[x] 😨 | Página 404
-
-[] 🔥 | Organizar perguntas por curtidas e data de inclusão (mais recente e mais antiga)
-
-[] 🌓 | Tema dark/light
+- [x] 📼 | Variáveis para cores no Css
+- [x] 😨 | Página 404
+- [ ] 🔥 | Organizar perguntas por curtidas e data de inclusão (mais recente e mais antiga)
+- [ ] 🌓 | Tema dark/light
