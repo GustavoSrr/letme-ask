@@ -4,10 +4,10 @@
 
 ## 📡 Tecnologias
 
-- HTML
-- Scss
-- JavaScript
-
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+- [Styled Components](https://styled-components.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://reactjs.org/)
 ## 🤓 Aprendizado
 
 - 🆔 | **Autenticação com Firebase**
