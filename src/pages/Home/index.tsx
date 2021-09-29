@@ -11,6 +11,8 @@ import { Button } from '../../components/Button/index'
 
 import { database } from '../../services/firebase'
 
+import { Container, Main, Content, CreateButton, Separator, Form, Aside } from './styles'
+
 export function Home () {
   const history = useHistory()
   const { user, signInGoogle } = useAuth()
@@ -42,21 +44,21 @@ export function Home () {
   }
 
   return (
-    <div id="AuthPage">
-      <aside>
+    <Container>
+      <Aside>
         <img src={Illustration} alt="Ilustração da home" />
         <strong>Toda pergunta tem uma resposta.</strong>
         <p>Aprenda e compartilhe conhecimento com outras pessoas.</p>
-      </aside>
-      <main>
-        <div className="MainContent">
+      </Aside>
+      <Main>
+        <Content>
           <img src={Logo} alt="Logo do LetmeAsk"></img>
-          <button className="CreateRoom" onClick={handleCreateRoom}>
+          <CreateButton onClick={handleCreateRoom}>
             <img src={GoogleLogo} alt="Logo do Google"></img>
             Criar sua sala com Google
-          </button>
-          <div className="Separator">ou entre em uma sala</div>
-          <form onSubmit={handleJoinRoom}>
+          </CreateButton>
+          <Separator>ou entre em uma sala</Separator>
+          <Form onSubmit={handleJoinRoom}>
             <input
               type="text"
               placeholder="Digite o código de uma sala"
@@ -68,9 +70,9 @@ export function Home () {
               <img src={Join} alt="Entrar" className="BtnImg" />
               Entrar na sala
             </Button>
-          </form>
-        </div>
-      </main>
-    </div>
+          </Form>
+        </Content>
+      </Main>
+    </Container>
   )
 }
