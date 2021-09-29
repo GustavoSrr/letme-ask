@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import clss from 'classnames'
 
-import './styles.scss'
+import { Container, Footer, UserInfo } from './styles'
 
 type QuestionProps = {
   content: string,
@@ -22,20 +22,19 @@ export function Question ({
   isHightlighted = false
 }: QuestionProps) {
   return (
-    <div className={clss(
+    <Container className={clss(
       'Question',
       { Answered: isAnswered },
       { Hightlighted: isHightlighted && !isAnswered }
     )}>
       <pre>{content}</pre>
-      <footer>
-        <div className="UserInfo">
+      <Footer>
+        <UserInfo>
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
-        </div>
+        </UserInfo>
         <div>{children}</div>
-      </footer>
-
-    </div>
+      </Footer>
+    </Container>
   )
 }

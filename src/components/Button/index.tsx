@@ -1,5 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react'
-import './styles.scss'
+
+import { Btn } from './styles'
 
 type BtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   outlined?: boolean,
@@ -7,5 +8,5 @@ type BtnProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   transparent?: boolean
 };
 export function Button ({ outlined = false, rounded = false, transparent = false, ...props }: BtnProps) {
-  return <button className={`Button ${outlined ? 'outline' : ''} ${rounded ? 'round' : ''} ${transparent ? 'transparent' : ''}`} {...props} />
+  return <Btn className={`Button ${outlined ? 'outline' : ''} ${rounded ? 'round' : ''} ${transparent ? 'transparent' : ''}`} {...props} />
 }

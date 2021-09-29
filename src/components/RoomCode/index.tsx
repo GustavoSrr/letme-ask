@@ -4,7 +4,7 @@ import share from '../../assets/images/share.svg'
 
 import { Button } from '../Button/index'
 
-import './styles.scss'
+import { Container, Content } from './styles'
 
 type RoomCodeProps = {
   code: string
@@ -16,11 +16,11 @@ export function RoomCode (props: RoomCodeProps) {
   }
 
   return (
-    <div className="RoomCode">
+    <Container>
       <Button rounded onClick={CopyCodeToClipboard} title="Compartilhar">
         <img className="Share" src={share} alt="Compartillhar" title="Compartilhar" />
       </Button>
-      <div className="RoomCodeContent">
+      <Content>
         <ul>
           <li>
             <span>Copiar código da sala</span>
@@ -29,7 +29,7 @@ export function RoomCode (props: RoomCodeProps) {
             <span>Copiar url da sala</span>
           </li>
         </ul>
-      </div>
-    </div>
+      </Content>
+    </Container>
   )
 }

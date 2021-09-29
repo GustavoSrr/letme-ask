@@ -1,4 +1,6 @@
-.Button {
+import styled from 'styled-components'
+
+export const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,4 +49,4 @@
     opacity: 0.6;
     cursor: not-allowed;
   }
-}
+`
