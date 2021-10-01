@@ -5,7 +5,17 @@ declare module 'styled-components' {
     title: string;
 
     colors: {
-      background: string;
+      backgroundColor: string;
+
+      borderColor: string;
+
+      textTitleColor: string;
+      textParagraphColor: string;
+      textAccentColor: string;
+      textAreaColor: string;
+
+      hightlighColor: string;
+      answeredColor: string;
     }
   }
 }
