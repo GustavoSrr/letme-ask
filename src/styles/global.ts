@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     --googleColor: #ea4335;
     --googleColorHover: #D13E30;
 
-    --backgroundLightColor: #f8f8f8;
+    --backgroundColor: ${props => props.theme.colors.background};
     --borderGrayColor: #d5d5d5;
 
     --textBlackColor: #29292e;
@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: var(--backgroundLightColor);
+    background-color: var(--backgroundColor);
     color: var(--textBlackColor);
   }
 
