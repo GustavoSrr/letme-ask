@@ -23,10 +23,17 @@ export const Content = styled.div`
 
   > div {
     display: flex;
-    gap: 16px;
+    gap: 2px;
+  }
 
-    button {
-      padding: 16px;
+  #EndRoomBtn {
+    margin-left: 14px;
+    background: transparent;
+    border: 1px solid var(--dangerColor);
+    color: var(--dangerColor);
+
+    &:hover {
+      background-color: var(--dangerColorTransparent);
     }
   }
 `

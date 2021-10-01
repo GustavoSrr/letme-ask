@@ -4,6 +4,7 @@ export const Btn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 52px;
 
   padding: 16px;
   border: 0;
@@ -18,12 +19,6 @@ export const Btn = styled.button`
     margin-right: 8px;
   }
 
-  &.outline {
-    background-color: white;
-    border: 1px solid var(--primaryColor);
-    color: var(--primaryColor);
-  }
-
   &.round {
     border-radius: 50%;
   }
@@ -32,16 +27,37 @@ export const Btn = styled.button`
     background-color: var(--primaryColorHover);
   }
 
-  &.transparent {
+  &.outline {
     background-color: transparent;
-    color: var(--secundaryColor);
+    border: 1px solid var(--primaryColor);
+    color: var(--primaryColor);
+    font-weight: normal;
 
     &:hover {
-      background-color: var(--secundaryColorTransparent);
+      color: var(--primaryColor);
+      border: 1px solid var(--primaryColor);
+      background-color: var(--primaryColorTransparent)
+    }
+  }
+
+  &.transparent {
+    background-color: transparent;
+    color: var(--primaryColor);
+
+    &:hover {
+      background-color: var(--primaryColorTransparent);
     }
 
     &:active {
-      background-color: var(--secundaryFocusColorTransparent);
+      background-color: var(--primaryFocusColorTransparent);
+    }
+
+    > svg {
+      fill: transparent;
+
+      path {
+        stroke: var(--primaryColor)
+      }
     }
   }
 
