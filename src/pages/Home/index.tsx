@@ -13,7 +13,7 @@ import { database } from '../../services/firebase'
 
 import { Container, Main, Content, CreateButton, Separator, Form, Aside } from './styles'
 
-export function Home () {
+export const Home: React.FC = () => {
   const history = useHistory()
   const { user, signInGoogle } = useAuth()
   const [roomCode, setRoomCode] = useState('')
