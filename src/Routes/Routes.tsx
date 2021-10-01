@@ -10,17 +10,26 @@ import { NotFound } from '../pages/NotFound/index'
 
 import { AuthContextProvider } from '../contexts/AuthContext'
 
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from '../styles/global'
+import { useTheme } from '../hooks/useTheme'
+
 export function Routes () {
+  const { theme } = useTheme()
+
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/rooms/new" component={NewRoom} />
-          <Route path="/rooms/:id" component={Room} />
-          <Route path="/admin/rooms/:id" component={AdminRoom} />
-          <Route path="*" component={NotFound} />
-        </Switch>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/rooms/new" component={NewRoom} />
+            <Route path="/rooms/:id" component={Room} />
+            <Route path="/admin/rooms/:id" component={AdminRoom} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </ThemeProvider>
       </AuthContextProvider>
     </BrowserRouter>
   )
