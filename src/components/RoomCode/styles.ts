@@ -1,14 +1,5 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  button:focus ~ .RoomCodeContent {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-`
-
 export const Content = styled.div`
   display: none;
   position: absolute;
@@ -28,5 +19,14 @@ export const Content = styled.div`
     li:hover {
       color: var(--secundaryColor);
     }
+  }
+`
+
+export const Container = styled.div`
+  button:focus ~ ${Content} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 `
