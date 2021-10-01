@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   header {
     padding: 24px;
-    border-bottom: 1px solid var(--borderGrayColor);
+    border-bottom: 1px solid var(--borderColor);
   }
 `
 
@@ -80,7 +80,7 @@ export const NoQuestions = styled.div`
   p {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: var(--textGrayColor);
+    color: var(--textParagraphColor);
     max-width: 380px;
   }
 `

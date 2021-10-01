@@ -6,7 +6,7 @@ export const Container = styled.div`
 
   header {
     padding: 24px;
-    border-bottom: 1px solid var(--borderGrayColor);
+    border-bottom: 1px solid var(--borderColor);
   }
 `
 
@@ -65,6 +65,7 @@ export const Form = styled.form`
     min-height: 130px;
     outline: none;
     border: 1px solid transparent;
+    color: var(--textParagraphColor);
 
     &:focus {
       box-shadow: rgba(17, 12, 46, 0.03) 0px 25px 70px 0px;
@@ -111,7 +112,7 @@ export const Form = styled.form`
 
       span {
         margin-left: 8px;
-        color: var(--textBlackColor);
+        color: var(--textTitleColor);
         font-weight: 500;
         font-size: 14px;
       }
@@ -119,7 +120,7 @@ export const Form = styled.form`
 
     > span {
       font-size: 14px;
-      color: var(--textGrayColor);
+      color: var(--textParagraphColor);
       font-weight: 500;
 
       button {
@@ -156,7 +157,7 @@ export const NoQuestions = styled.div`
   p {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: var(--textGrayColor);
+    color: var(--textParagraphColor);
     max-width: 380px;
   }
 `

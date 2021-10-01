@@ -35,7 +35,7 @@ export const Aside = styled.aside`
 
     font-size: 24px;
     line-height: 32px;
-    color: var(--textWhiteColor);
+    color: var(--textAccentColor);
   }
 `
 
@@ -68,7 +68,7 @@ export const Content = styled.div`
 
   p {
     font-size: 14px;
-    color: var(--textGrayColor);
+    color: var(--textParagraphColor);
     margin-top: 16px;
 
     a {

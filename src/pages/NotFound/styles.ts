@@ -14,7 +14,7 @@ export const Container = styled.div`
   a {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    color: var(--textGrayColor);
+    color: var(--textParagraphColor);
     text-decoration: none;
     border-bottom: 1px solid var(--primaryColor);
 

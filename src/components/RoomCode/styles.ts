@@ -13,7 +13,7 @@ export const Content = styled.div`
   ul {
     list-style: none;
     cursor: pointer;
-    color: var(--textGrayColor);
+    color: var(--textParagraphColor);
     text-decoration: underline, solid black;
 
     li:hover {

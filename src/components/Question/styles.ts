@@ -11,10 +11,10 @@ export const Container = styled.div`
 
   &.Hightlighted {
     background-color: var(--hightlighColor);
-    border: 1px solid var(--borderGrayColor);
+    border: 1px solid var(--borderColor);
 
     footer .UserInfo span {
-      color: var(--textBlackColor);
+      color: var(--textTitleColor);
     }
   }
 
@@ -24,7 +24,7 @@ export const Container = styled.div`
 
   pre {
     font-family: 'Roboto', sans-serif;
-    color: var(--textBlackColor);
+    color: var(--textTitleColor);
     font-size: 16px;
     white-space: pre-wrap;
     word-break: break-all;
@@ -51,7 +51,7 @@ export const Footer = styled.footer`
     &.LikeButton {
       display: flex;
       align-items: center;
-      color: var(--textGrayColor);
+      color: var(--textParagraphColor);
       gap: 8px;
       padding: 8px;
       border: 1px solid transparent;
@@ -84,7 +84,7 @@ export const Footer = styled.footer`
     &.AnsweredButton {
       display: flex;
       align-items: center;
-      color: var(--textGrayColor);
+      color: var(--textParagraphColor);
       padding: 8px;
 
       &:hover {
@@ -103,7 +103,7 @@ export const Footer = styled.footer`
     &.HightlightButton {
       display: flex;
       align-items: center;
-      color: var(--textGrayColor);
+      color: var(--textParagraphColor);
       padding: 8px;
 
       &:hover {
@@ -118,7 +118,7 @@ export const Footer = styled.footer`
     &.DeleteButton {
       display: flex;
       align-items: center;
-      color: var(--textGrayColor);
+      color: var(--textParagraphColor);
       padding: 8px;
 
       &:hover {
@@ -143,7 +143,7 @@ export const UserInfo = styled.div`
   }
 
   span {
-    color: var(--textGrayColor);
+    color: var(--textParagraphColor);
     font-size: 14px;
     padding-left: 10px;
   }
