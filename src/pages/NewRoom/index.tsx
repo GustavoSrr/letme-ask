@@ -11,7 +11,7 @@ import Logo from '../../assets/images/logo.svg'
 
 import { Container, Aside, Content, Main, Form } from './styles'
 
-export function NewRoom () {
+export const NewRoom: React.FC = () => {
   const { user } = useAuth()
   const history = useHistory()
   const [newRoom, setNewRoom] = React.useState('')
