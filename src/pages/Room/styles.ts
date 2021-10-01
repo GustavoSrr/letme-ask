@@ -23,7 +23,9 @@ export const Content = styled.div`
 
   > div {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
 
     button {
       padding: 16px;
@@ -76,6 +78,27 @@ export const Form = styled.form`
     margin-top: 16px;
     margin-bottom: 16px;
 
+    #SendBtn {
+      background-color: transparent;
+      color: var(--secundaryColor);
+
+      &:hover {
+        background-color: var(--secundaryColorTransparent);
+      }
+
+      &:active {
+        background-color: var(--secundaryFocusColorTransparent);
+      }
+
+      > svg {
+        fill: transparent;
+
+        path {
+          stroke: var(--secundaryColor)
+        }
+      }
+    }
+
     div {
       display: flex;
       align-items: center;
@@ -102,7 +125,7 @@ export const Form = styled.form`
       button {
         background-color: transparent;
         border: 0 none;
-        color: var(--primaryColor);
+        color: var(--secundaryColor);
         text-decoration: underline;
         font-size: 14px;
         font-weight: 500;
