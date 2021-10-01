@@ -23,5 +23,8 @@
   "include": [
     "src",
     "src/custom.d.ts"
+  ],
+  "files": [
+    "src/styles/styled.d.ts"
   ]
 }
