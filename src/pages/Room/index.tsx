@@ -5,14 +5,13 @@ import { useRoom } from '../../hooks/useRoom'
 
 import { Button } from '../../components/Button/index'
 import { Question } from '../../components/Question/index'
-import { RoomCode } from '../../components/RoomCode/index'
+import { Header } from '../../components/Header'
 
-import Logo from '../../assets/images/logo.svg'
 import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
 import { database } from '../../services/firebase'
 
-import { Container, Content, Main, Title, Form, QuestionList, NoQuestions } from './styles'
+import { Container, Main, Title, Form, QuestionList, NoQuestions } from './styles'
 
 type RoomParams = {
   id: string
@@ -58,12 +57,7 @@ export const Room: React.FC = () => {
 
   return (
     <Container>
-      <header>
-        <Content>
-          <img src={Logo} alt="Logo" />
-          <RoomCode code={roomId} />
-        </Content>
-      </header>
+      <Header roomId={roomId}/>
       <Main>
         <Title>
           <h1>Sala {title}</h1>
@@ -75,6 +69,7 @@ export const Room: React.FC = () => {
             placeholder="O que você quer perguntar?"
             value={newQuestion}
             required
+            autoFocus
             maxLength={2000}
             onChange={(event) => setNewQuestion(event.target.value)}
           />
@@ -90,9 +85,9 @@ export const Room: React.FC = () => {
                 <span>Para enviar uma pergunta <button>faça o login</button>.</span>
                 )
             }
-            <Button type="submit" disabled={!user} rounded transparent >
-              <svg height="20" width="20" aria-hidden="true" focusable="false" data-prefix="far" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path fill="currentColor" d="M440 6.5L24 246.4c-34.4 19.9-31.1 70.8 5.7 85.9L144 379.6V464c0 46.4 59.2 65.5 86.6 28.6l43.8-59.1 111.9 46.2c5.9 2.4 12.1 3.6 18.3 3.6 8.2 0 16.3-2.1 23.6-6.2 12.8-7.2 21.6-20 23.9-34.5l59.4-387.2c6.1-40.1-36.9-68.8-71.5-48.9zM192 464v-64.6l36.6 15.1L192 464zm212.6-28.7l-153.8-63.5L391 169.5c10.7-15.5-9.5-33.5-23.7-21.2L155.8 332.6 48 288 464 48l-59.4 387.3z"></path>
+            <Button id="SendBtn" type="submit" disabled={!user} rounded transparent title="Perguntar">
+              <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.22617 15.7087L1.57383 13.259C0.870701 12.9621 0.780857 11.9777 1.48789 11.5715L19.5934 1.1262C20.2691 0.735576 21.1168 1.30589 20.984 2.09495L18.1715 18.9699C18.0699 19.5676 17.4371 19.9152 16.8824 19.6809L11 17.6802M6.22617 15.7087L15.438 7.12069C15.4778 7.08351 15.5303 7.06284 15.5848 7.06284V7.06284C15.7594 7.06284 15.8614 7.25957 15.7609 7.40226L9.7695 15.9076C9.38508 16.4533 9.63306 17.2153 10.265 17.4302L11 17.6802M6.22617 15.7087L7.07203 20.2183C7.23379 21.0807 8.34849 21.3316 8.86405 20.6216L11 17.6802" stroke="black" strokeWidth="1.5" />
               </svg>
             </Button>
           </div>
