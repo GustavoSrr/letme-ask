@@ -2,8 +2,7 @@ import React from 'react'
 
 import { Button } from '../Button/index'
 import { RoomCode } from '../RoomCode/index'
-
-import Logo from '../../assets/images/logo.svg'
+import { Logo } from '../Logo/index'
 
 import { Container, Content } from './styles'
 import { useTheme } from '../../hooks/useTheme'
@@ -17,7 +16,7 @@ export const Header: React.FC<Props> = ({ roomId }) => {
   return (
     <Container>
       <Content>
-        <img src={Logo} alt="Logo" />
+        <Logo />
         <div>
           <Button rounded transparent title="Alterar tema" onClick={() => toggleTheme()}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
