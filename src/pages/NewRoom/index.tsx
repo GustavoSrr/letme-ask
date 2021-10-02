@@ -2,12 +2,12 @@ import React from 'react'
 import { useAuth } from '../../hooks/useAuth'
 import { Link, useHistory } from 'react-router-dom'
 
-import { Button } from '../../components/Button/index'
+import { Button } from '../../components/Button'
+import { Logo } from '../../components/Logo'
 
 import { database } from '../../services/firebase'
 
 import Illustration from '../../assets/images/illustration.svg'
-import Logo from '../../assets/images/logo.svg'
 
 import { Container, Aside, Content, Main, Form } from './styles'
 
@@ -33,12 +33,12 @@ export const NewRoom: React.FC = () => {
     <Container>
       <Aside>
         <img src={Illustration} alt="Ilustração da home" />
-        <strong>Crie salas de Q&amp;A ao vivo</strong>
-        <p>Tire dúvidas em tempo real.</p>
+        <strong>Toda pergunta tem uma resposta.</strong>
+        <p>Aprenda e compartilhe conhecimento com outras pessoas.</p>
       </Aside>
       <Main>
         <Content>
-          <img src={Logo} alt="Logo do LetmeAsk"></img>
+          <Logo large/>
           <h2>Criar uma nova sala</h2>
           <Form onSubmit={handleCreateRoom}>
             <input
