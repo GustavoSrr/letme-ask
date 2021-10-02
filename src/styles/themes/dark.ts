@@ -4,10 +4,10 @@ export default {
   colors: {
     backgroundColor: '#222222',
 
-    borderColor: '#282929',
+    borderColor: '#414242',
 
     textTitleColor: '#E3E3FF',
-    textParagraphColor: '#B8B8CC',
+    textParagraphColor: '#CBCACB',
     textAccentColor: '#e5def7',
     textAreaColor: '#1C1C1C',
 
