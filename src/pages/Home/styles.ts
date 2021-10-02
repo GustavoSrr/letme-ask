@@ -15,7 +15,7 @@ export const Aside = styled.aside`
   padding: 120px 80px;
 
   background-color: var(--primaryColor);
-  color: white;
+  color: var(--backgroundColor);
 
   img {
     max-width: 320px;
@@ -35,7 +35,7 @@ export const Aside = styled.aside`
 
     font-size: 24px;
     line-height: 32px;
-    color: var(--textAccentColor);
+    color: var(--borderColor);
   }
 `
 
@@ -89,11 +89,15 @@ export const CreateButton = styled.button`
   font-weight: 500;
 
   background-color: var(--googleColor);
-  color: white;
+  color: var(--backgroundColor);
   cursor: pointer;
 
-  img {
+  svg {
     margin-right: 8px;
+
+    path {
+      fill: var(--backgroundColor);
+    }
   }
 
   &:hover {
@@ -106,8 +110,9 @@ export const Form = styled.form`
     height: 50px;
     border-radius: 8px;
     padding: 0 16px;
-    background-color: white;
-    border: 1px solid var(--grayColor);
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
+    color: var(--textParagraphColor);
 
     &:focus {
       outline: 0 none;
@@ -117,6 +122,10 @@ export const Form = styled.form`
 
   button {
     margin-top: 16px;
+
+    svg path {
+      stroke: var(--backgroundColor);
+    }
   }
 
   button,
@@ -127,7 +136,7 @@ export const Form = styled.form`
 
 export const Separator = styled.div`
   font-size: 16px;
-  color: var(--grayColor);
+  color: var(--borderColor);
 
   margin: 32px 0;
   display: flex;
@@ -137,7 +146,7 @@ export const Separator = styled.div`
     content: " ";
     flex: 1;
     height: 1px;
-    background-color: var(--grayColor);
+    background-color: var(--borderColor);
     margin-right: 16px;
   }
 
@@ -145,7 +154,7 @@ export const Separator = styled.div`
     content: " ";
     flex: 1;
     height: 1px;
-    background-color: var(--grayColor);
+    background-color: var(--borderColor);
     margin-left: 16px;
   }
 `
