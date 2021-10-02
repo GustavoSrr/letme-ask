@@ -5,10 +5,11 @@ export const Content = styled.div`
   position: absolute;
   border-radius: 8px;
   padding: 16px;
-  background-color: white;
+  background-color: var(--backgroundColor);
   margin-top: 10px;
-  // box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  border: 1px solid var(--borderColor);
 
   ul {
     list-style: none;
