@@ -12,7 +12,7 @@ export const Btn = styled.button`
   font-weight: 500;
 
   background-color: var(--primaryColor);
-  color: white;
+  color: var(--backgroundColor);
   cursor: pointer;
 
   > .BtnImg {
