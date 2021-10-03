@@ -19,11 +19,12 @@ export function AdminHeader ({ roomId }: AdminHeaderProps) {
   const history = useHistory()
 
   async function handleEndRoom () {
-    database.ref(`rooms/${roomId}`).update({
-      endedAt: new Date()
-    })
-
-    history.push('/')
+    if (window.confirm('Tem certeza que deseja encerrar essa sala?')) {
+      database.ref(`rooms/${roomId}`).update({
+        endedAt: new Date()
+      })
+      history.push('/')
+    }
   }
 
   return (
