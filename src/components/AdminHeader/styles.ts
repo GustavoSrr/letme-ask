@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 export const Container = styled.header`
+  position: sticky;
+  top: 0;
+  background-color: var(--backgroundColor);
   padding: 24px;
-  border-bottom: 1px solid var(--borderColor);
 `
 
 export const Content = styled.div`
