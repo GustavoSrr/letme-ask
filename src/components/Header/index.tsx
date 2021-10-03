@@ -13,6 +13,7 @@ type Props = {
 
 export const Header: React.FC<Props> = ({ roomId }) => {
   const { toggleTheme } = useTheme()
+
   return (
     <Container>
       <Content>
