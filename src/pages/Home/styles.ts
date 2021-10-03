@@ -84,24 +84,22 @@ export const CreateButton = styled.button`
   align-items: center;
 
   margin-top: 64px;
-  border: 0;
   border-radius: 8px;
-  font-weight: 500;
+  font-weight: normal;
 
-  background-color: var(--googleColor);
-  color: var(--backgroundColor);
+  background-color: transparent;
+  color: var(--textParagraphColor);
+  border: 1px solid var(--borderColor);
   cursor: pointer;
 
   svg {
     margin-right: 8px;
-
-    path {
-      fill: var(--backgroundColor);
-    }
   }
 
   &:hover {
-    background-color: var(--googleColorHover);
+    border: 1px solid var(--primaryColorTransparent);
+    background-color: var(--primaryColorTransparent);
+    color: var(--primaryColor);
   }
 `
 
