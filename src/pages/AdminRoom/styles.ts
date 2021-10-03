@@ -3,11 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 24px;
-
-  header {
-    padding: 24px;
-    border-bottom: 1px solid var(--borderColor);
-  }
 `
 
 export const Content = styled.div`
