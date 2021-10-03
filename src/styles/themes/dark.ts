@@ -9,9 +9,9 @@ export default {
     textTitleColor: '#E3E3FF',
     textParagraphColor: '#CBCACB',
     textAccentColor: '#e5def7',
-    textAreaColor: '#1C1C1C',
+    textAreaColor: '#1F1F1F',
 
-    hightlighColor: '#1B1A1C',
+    hightlighColor: '#222124',
     answeredColor: '#262626'
   }
 }
