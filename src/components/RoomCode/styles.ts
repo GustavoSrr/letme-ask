@@ -15,10 +15,16 @@ export const Content = styled.div`
     list-style: none;
     cursor: pointer;
     color: var(--textParagraphColor);
-    text-decoration: underline, solid black;
+    text-decoration: none;
+
+    li {
+      border-bottom: 1px solid var(--secundaryColorTransparent);
+      width: fit-content;
+    }
 
     li:hover {
       color: var(--secundaryColor);
+      border-bottom: 1px solid var(--secundaryColor);
     }
   }
 `
