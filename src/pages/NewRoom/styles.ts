@@ -73,6 +73,12 @@ export const Content = styled.div`
 
     a {
       color: var(--secundaryColor);
+      text-decoration: none;
+      border-bottom: 1px solid var(--secundaryColorTransparent);
+
+      &:hover {
+        border-color: var(--secundaryColor);
+      }
     }
   }
 `
