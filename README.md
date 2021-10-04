@@ -27,7 +27,8 @@
 
     Criando regras e eventos do firebase para atualizar a lista de perguntas da sala.
 
-- 💅 | **Styled Components**~
+- 💅 | **Styled Components**
+
     Primeiro contato com o Styled Components, usei para criação dos temas dark e light.
 
 ## ➕ Adiciões feitas
