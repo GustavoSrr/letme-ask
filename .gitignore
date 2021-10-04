@@ -11,10 +11,6 @@
 # production
 /build
 
-# eslint
-.eslintrc.json
-.editorconfig
-
 # vscode
 .vscode
 
