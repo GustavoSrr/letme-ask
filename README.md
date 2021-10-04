@@ -2,58 +2,68 @@
 
 > O projeto do Next Level Week Together (React), o evento da Rocketseat. O projeto consiste em "fóruns", em que você cria uma sala, que outras pessoas podem entrar, para responder as dúvidas da galera.
 
+## 📃 Conteúdo
+  1. [Tecnologias](#-tecnologias)
+  2. [Aprendizado](#-aprendizado)
+      - [Autenticação com Firebase]()
+      - [React Context]()
+      - [React Hooks]()
+      - [Realtime Database]()
+      - [Styled Components]()
+  3. [Adições feitas](#-adiciões-feitas)
+  4. [Como instalar](#-como-instalar)
+
 ## 📡 Tecnologias
 
-- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
-- [Styled Components](https://styled-components.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [React](https://reactjs.org/)
-
+  - HTML
+  - Styled Components
+  - TypeScript
+  - React
 ## 🤓 Aprendizado
 
-- 🆔 | **Autenticação com Firebase**
+  ### 🆔 | **Autenticação com Firebase**
 
-    Eu já tinha usado Firebase, mas nunca o serviço de autenticação dele. Achei bem simples e interessante.
+  Eu já tinha usado Firebase, mas nunca o serviço de autenticação dele. Achei bem simples e interessante.
 
-- ⛓ | **React Context**
+  ### ⛓ | **React Context**
 
-    Uma forma de passar dados entre componentes de forma mais fácil. Nunca havia usado, é muito útil.
+  Uma forma de passar dados entre componentes de forma mais fácil. Nunca havia usado, é muito útil.
 
-- ⚛ | **React Hooks**
+  ### ⚛ | **React Hooks**
 
-    Foi a primeira vez que criei um Custom Hook, foi usado para compartilhar funcionalidades das salas.
+  Foi a primeira vez que criei um Custom Hook, foi usado para compartilhar funcionalidades das salas.
 
-- 💾 | **Realtime Database**
+  ### 💾 | **Realtime Database**
 
-    Criando regras e eventos do firebase para atualizar a lista de perguntas da sala.
+  Criando regras e eventos do firebase para atualizar a lista de perguntas da sala.
 
-- 💅 | **Styled Components**
+  ### 💅 | **Styled Components**
 
-    Primeiro contato com o Styled Components, usei para criação dos temas dark e light.
+  Primeiro contato com o Styled Components, usei para criação dos temas dark e light.
 
 ## ➕ Adiciões feitas
 
-- [x] 📼 | Variáveis para cores no Css
-- [x] 😨 | Página 404
-- [x] 🌓 | Tema dark/light
-- [ ] 🔥 | Organizar perguntas por curtidas e data de inclusão (mais recente e mais antiga)
+  - [x] 📼 | Variáveis para cores no Css
+  - [x] 😨 | Página 404
+  - [x] 🌓 | Tema dark/light
+  - [ ] 🔥 | Organizar perguntas por curtidas e data de inclusão (mais recente e mais antiga)
 
 ## ⬇ Como instalar?
 
-### Clonando o repositório
+  ### Clonando o repositório
 
-```
-git clone https://github.com/GustavoSrr/letme-ask.git
-```
+  ```
+  git clone https://github.com/GustavoSrr/letme-ask.git
+  ```
 
-### Entrando na pasta criada
+  ### Entrando na pasta criada
 
-```
-cd letme-ask
-```
+  ```
+  cd letme-ask
+  ```
 
-### Instalando as dependências
+  ### Instalando as dependências
 
-```
-npm i
-```
+  ```
+  npm i
+  ```
