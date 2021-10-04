@@ -32,3 +32,23 @@
 - [x] 😨 | Página 404
 - [x] 🌓 | Tema dark/light
 - [ ] 🔥 | Organizar perguntas por curtidas e data de inclusão (mais recente e mais antiga)
+
+## ⬇ Como instalar?
+
+### Clonando o repositório
+
+```
+git clone https://github.com/GustavoSrr/letme-ask.git
+```
+
+### Entrando na pasta criada
+
+```
+cd letme-ask
+```
+
+### Instalando as dependências
+
+```
+npm i
+```
