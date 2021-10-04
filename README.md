@@ -8,6 +8,7 @@
 - [Styled Components](https://styled-components.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://reactjs.org/)
+
 ## 🤓 Aprendizado
 
 - 🆔 | **Autenticação com Firebase**
@@ -16,7 +17,7 @@
 
 - ⛓ | **React Context**
 
-    Basicamente, é uma forma de passar dados entre componentes de forma mais fácil. Nunca havia usado, é muito útil.
+    Uma forma de passar dados entre componentes de forma mais fácil. Nunca havia usado, é muito útil.
 
 - ⚛ | **React Hooks**
 
@@ -25,6 +26,9 @@
 - 💾 | **Realtime Database**
 
     Criando regras e eventos do firebase para atualizar a lista de perguntas da sala.
+
+- 💅 | **Styled Components**~
+    Primeiro contato com o Styled Components, usei para criação dos temas dark e light.
 
 ## ➕ Adiciões feitas
 
