@@ -5,11 +5,11 @@
 ## 📃 Conteúdo
   1. [Tecnologias](#-tecnologias)
   2. [Aprendizado](#-aprendizado)
-      - [Autenticação com Firebase]()
-      - [React Context]()
-      - [React Hooks]()
-      - [Realtime Database]()
-      - [Styled Components]()
+      - [Autenticação com Firebase](#--autenticação-com-firebase)
+      - [React Context](#--react-context)
+      - [React Hooks](#--react-hooks)
+      - [Realtime Database](#--realtime-database)
+      - [Styled Components](#--styled-components)
   3. [Adições feitas](#-adiciões-feitas)
   4. [Como instalar](#-como-instalar)
 
@@ -21,25 +21,25 @@
   - React
 ## 🤓 Aprendizado
 
-  ### 🆔 | **Autenticação com Firebase**
+  - #### 🆔 | **Autenticação com Firebase**
 
-  Eu já tinha usado Firebase, mas nunca o serviço de autenticação dele. Achei bem simples e interessante.
+    Eu já tinha usado Firebase, mas nunca o serviço de autenticação dele. Achei bem simples e interessante.
 
-  ### ⛓ | **React Context**
+  - #### ⛓ | **React Context**
 
-  Uma forma de passar dados entre componentes de forma mais fácil. Nunca havia usado, é muito útil.
+    Uma forma de passar dados entre componentes de forma mais fácil. Nunca havia usado, é muito útil.
 
-  ### ⚛ | **React Hooks**
+  - #### ⚛ | **React Hooks**
 
-  Foi a primeira vez que criei um Custom Hook, foi usado para compartilhar funcionalidades das salas.
+    Foi a primeira vez que criei um Custom Hook, foi usado para compartilhar funcionalidades das salas.
 
-  ### 💾 | **Realtime Database**
+  - #### 💾 | **Realtime Database**
 
-  Criando regras e eventos do firebase para atualizar a lista de perguntas da sala.
+    Criando regras e eventos do firebase para atualizar a lista de perguntas da sala.
 
-  ### 💅 | **Styled Components**
+  - #### 💅 | **Styled Components**
 
-  Primeiro contato com o Styled Components, usei para criação dos temas dark e light.
+    Primeiro contato com o Styled Components, usei para criação dos temas dark e light.
 
 ## ➕ Adiciões feitas
 
