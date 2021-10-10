@@ -12,7 +12,7 @@ type firebaseQuestionsType = Record<string, {
   isAnswered: boolean
   likes: Record<string, {
     authorId: string
-  }>
+  }>,
 }>
 
 type QuestionType = {
@@ -25,7 +25,7 @@ type QuestionType = {
   isHightlighted: boolean,
   isAnswered: boolean,
   likeCount: number,
-  likeId: string | undefined
+  likeId: string | undefined,
 }
 
 export function useRoom (roomId: string) {
