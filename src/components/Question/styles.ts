@@ -107,10 +107,10 @@ export const Footer = styled.footer`
       padding: 8px;
 
       &:hover {
-        background-color: var(--secundaryColorTransparent);
+        background-color: var(--yellowColorTransparent);
 
         svg path {
-          stroke: var(--secundaryColor);
+          stroke: var(--yellowColor)
         }
       }
     }
