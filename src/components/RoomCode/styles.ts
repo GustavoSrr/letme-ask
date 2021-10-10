@@ -23,7 +23,6 @@ export const Content = styled.div`
     }
 
     li:hover {
-      color: var(--secundaryColor);
       border-bottom: 1px solid var(--secundaryColor);
     }
   }
