@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --grayColor: #d5d5d5;
     --blueColor: #206CE8;
+    --yellowColor: #e0bf2c;
+    --yellowColorTransparent: rgba(224, 191, 44, 0.15);
     --blueColorTransparent: rgba(32, 108, 232, 0.15);
     --dangerColor: #e73f5d;
     --dangerColorTransparent: rgba(231, 63, 93, 0.15);
