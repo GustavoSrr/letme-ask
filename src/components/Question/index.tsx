@@ -11,7 +11,7 @@ type QuestionProps = {
   },
   children?: ReactNode,
   isAnswered?: boolean,
-  isHightlighted?: boolean
+  isHightlighted?: boolean,
 }
 
 export function Question ({
