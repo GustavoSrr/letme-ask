@@ -22,28 +22,44 @@ export const AdminRoom: React.FC = () => {
   const { questions, title } = useRoom(roomId)
 
   async function handleCheckQuestionAsAnswered (questionId: string) {
-    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-      isAnswered: true
-    })
+    try {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+        isAnswered: true
+      })
+    } catch (e) {
+      return window.alert('Você não tem permissão para isso.')
+    }
   }
 
   async function handleHightlightQuestion (questionId: string) {
     const getQuestion = await database.ref(`rooms/${roomId}/questions/${questionId}`).get()
 
     if ((await getQuestion).val().isHightlighted === false) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-        isHightlighted: true
-      })
+      try {
+        await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+          isHightlighted: true
+        })
+      } catch (e) {
+        return window.alert('Você não é o dono desta sala.')
+      }
     } else {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-        isHightlighted: false
-      })
+      try {
+        await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+          isHightlighted: false
+        })
+      } catch (e) {
+        return window.alert('Você não é o dono desta sala.')
+      }
     }
   }
 
   async function handleDeleteQuestion (questionId: string) {
     if (window.confirm('Tem certeza que deseja excluir essa pergunta?')) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
+      try {
+        await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
+      } catch (e) {
+        return window.alert('Você não é o dono desta sala.')
+      }
     }
   }
 
