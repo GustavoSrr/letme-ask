@@ -1,5 +1,6 @@
 import React, { FormEvent, useState, useContext } from 'react'
 import { useAuth } from '../../hooks/useAuth'
+import { useTheme } from '../../hooks/useTheme'
 import { useHistory } from 'react-router-dom'
 import { ThemeContext } from 'styled-components'
 
@@ -19,6 +20,7 @@ export const Home: React.FC = () => {
   const [roomCode, setRoomCode] = useState('')
 
   const { colors } = useContext(ThemeContext)
+  const { toggleTheme } = useTheme()
 
   async function handleCreateRoom () {
     if (!user) {
@@ -35,33 +37,11 @@ export const Home: React.FC = () => {
     const roomRef = database.ref(`rooms/${roomCode}`).get()
 
     if (!(await roomRef).exists()) {
-      return toast.error('Essa sala não existe.', {
-        style: {
-          borderRadius: '8px',
-          backgroundColor: colors.textAreaColor,
-          color: colors.textTitleColor,
-          boxShadow: 'none'
-        },
-        iconTheme: {
-          primary: '#e73f5d',
-          secondary: colors.textAreaColor
-        }
-      })
+      return toast.error('Essa sala não existe.')
     }
 
     if ((await roomRef).val().endedAt) {
-      return toast.error('Essa sala foi fechada.', {
-        style: {
-          borderRadius: '8px',
-          backgroundColor: colors.textAreaColor,
-          color: colors.textTitleColor,
-          boxShadow: 'none'
-        },
-        iconTheme: {
-          primary: '#e73f5d',
-          secondary: colors.textAreaColor
-        }
-      })
+      return toast.error('Essa sala foi fechada.')
     }
 
     history.push(`/rooms/${roomCode}`)
@@ -69,13 +49,51 @@ export const Home: React.FC = () => {
 
   return (
     <Container>
-      <Toaster />
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              borderRadius: '8px',
+              backgroundColor: colors.textAreaColor,
+              color: colors.textTitleColor,
+              boxShadow: 'none'
+            },
+            iconTheme: {
+              primary: '#2fd373',
+              secondary: colors.textAreaColor
+            }
+          },
+          error: {
+            style: {
+              borderRadius: '8px',
+              backgroundColor: colors.textAreaColor,
+              color: colors.textTitleColor,
+              boxShadow: 'none'
+            },
+            iconTheme: {
+              primary: '#e73f5d',
+              secondary: colors.textAreaColor
+            }
+          }
+        }}
+      />
       <Aside>
         <img src={Illustration} alt="Ilustração da home" />
         <strong>Toda pergunta tem uma resposta.</strong>
         <p>Aprenda e compartilhe conhecimento com outras pessoas.</p>
       </Aside>
       <Main>
+        <Button
+          title="Alterar tema"
+          id="HomeThemeButton"
+          rounded
+          transparent
+          onClick={() => toggleTheme()}
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 0.75C5.89399 0.75 1.75 4.88764 1.75 10C1.75 15.106 5.88764 19.25 11 19.25C13.5909 19.25 15.9773 18.1803 17.6876 16.3898C12.6795 16.8925 8.2591 12.9542 8.2591 7.84781C8.2591 5.01724 9.64705 2.3949 11.9452 0.798134C11.6313 0.766129 11.3159 0.750047 11 0.75ZM11 0.75V0V0.75ZM12.6027 0.383822C12.6028 0.383784 12.6028 0.383745 12.6029 0.383707L12.6027 0.383822Z" stroke="black" strokeWidth="1.3" />
+          </svg>
+        </Button>
         <Content>
           <Logo large/>
           <CreateButton onClick={handleCreateRoom}>
