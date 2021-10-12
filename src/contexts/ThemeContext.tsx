@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode } from 'react'
+import toast from 'react-hot-toast'
 import { usePersistedState } from '../hooks/usePersistedState'
 
 import dark from '../styles/themes/dark'
@@ -37,7 +38,12 @@ export function ThemeContextProvider (props: ThemeContextProviderProps) {
   const [theme, setTheme] = usePersistedState('theme', light)
 
   function toggleTheme () {
-    return setTheme(theme.title === 'light' ? dark : light)
+    try {
+      setTheme(theme.title === 'light' ? dark : light)
+      toast.success('Tema alterado')
+    } catch (e) {
+      return toast.error('Ocorreu um erro.')
+    }
   }
 
   return (
