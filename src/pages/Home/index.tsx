@@ -1,11 +1,13 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useState, useContext } from 'react'
 import { useAuth } from '../../hooks/useAuth'
 import { useHistory } from 'react-router-dom'
+import { ThemeContext } from 'styled-components'
 
 import Illustration from '../../assets/images/illustration.svg'
 
 import { Button } from '../../components/Button'
 import { Logo } from '../../components/Logo'
+import { toast, Toaster } from 'react-hot-toast'
 
 import { database } from '../../services/firebase'
 
@@ -15,6 +17,8 @@ export const Home: React.FC = () => {
   const history = useHistory()
   const { user, signInGoogle } = useAuth()
   const [roomCode, setRoomCode] = useState('')
+
+  const { colors } = useContext(ThemeContext)
 
   async function handleCreateRoom () {
     if (!user) {
@@ -31,11 +35,33 @@ export const Home: React.FC = () => {
     const roomRef = database.ref(`rooms/${roomCode}`).get()
 
     if (!(await roomRef).exists()) {
-      return alert('Essa sala não existe.')
+      return toast.error('Essa sala não existe.', {
+        style: {
+          borderRadius: '8px',
+          backgroundColor: colors.textAreaColor,
+          color: colors.textTitleColor,
+          boxShadow: 'none'
+        },
+        iconTheme: {
+          primary: '#e73f5d',
+          secondary: colors.textAreaColor
+        }
+      })
     }
 
     if ((await roomRef).val().endedAt) {
-      return alert('Essa sala foi fechada.')
+      return toast.error('Essa sala foi fechada.', {
+        style: {
+          borderRadius: '8px',
+          backgroundColor: colors.textAreaColor,
+          color: colors.textTitleColor,
+          boxShadow: 'none'
+        },
+        iconTheme: {
+          primary: '#e73f5d',
+          secondary: colors.textAreaColor
+        }
+      })
     }
 
     history.push(`/rooms/${roomCode}`)
@@ -43,6 +69,7 @@ export const Home: React.FC = () => {
 
   return (
     <Container>
+      <Toaster />
       <Aside>
         <img src={Illustration} alt="Ilustração da home" />
         <strong>Toda pergunta tem uma resposta.</strong>
