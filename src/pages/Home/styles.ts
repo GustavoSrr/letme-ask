@@ -37,6 +37,12 @@ export const Aside = styled.aside`
     line-height: 32px;
     color: var(--borderColor);
   }
+
+  @media only screen and (max-width: 1109px) {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
 `
 
 export const Main = styled.main`
