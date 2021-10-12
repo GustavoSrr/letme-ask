@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { useRoom } from '../../hooks/useRoom'
+import { ThemeContext } from 'styled-components'
 
 import { Question } from '../../components/Question/index'
 import { AdminHeader } from '../../components/AdminHeader'
+import { toast, Toaster } from 'react-hot-toast'
 
 import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
 import { database } from '../../services/firebase'
 
-import { Container, Main, Title, QuestionList, NoQuestions } from './styles'
+import { Container, Main, Title, QuestionList, NoQuestions, Select } from './styles'
 
 type RoomParams = {
   id: string
@@ -20,6 +22,9 @@ export const AdminRoom: React.FC = () => {
   const roomId = params.id
 
   const { questions, title } = useRoom(roomId)
+  const { colors } = useContext(ThemeContext)
+
+  const permissionError = () => toast.error('Você não tem permissão para isso.', { style: { borderRadius: '8px', backgroundColor: colors.textAreaColor, color: colors.textTitleColor, boxShadow: 'none' }, iconTheme: { primary: '#e73f5d', secondary: colors.textAreaColor } })
 
   async function handleCheckQuestionAsAnswered (questionId: string) {
     try {
@@ -27,7 +32,7 @@ export const AdminRoom: React.FC = () => {
         isAnswered: true
       })
     } catch (e) {
-      return window.alert('Você não tem permissão para isso.')
+      return permissionError()
     }
   }
 
@@ -40,7 +45,7 @@ export const AdminRoom: React.FC = () => {
           isHightlighted: true
         })
       } catch (e) {
-        return window.alert('Você não é o dono desta sala.')
+        return permissionError()
       }
     } else {
       try {
@@ -48,7 +53,7 @@ export const AdminRoom: React.FC = () => {
           isHightlighted: false
         })
       } catch (e) {
-        return window.alert('Você não é o dono desta sala.')
+        return permissionError()
       }
     }
   }
@@ -58,13 +63,14 @@ export const AdminRoom: React.FC = () => {
       try {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
       } catch (e) {
-        return window.alert('Você não é o dono desta sala.')
+        return permissionError()
       }
     }
   }
 
   return (
     <Container>
+      <Toaster />
       <AdminHeader roomId={roomId} />
       <Main>
         <Title>
@@ -72,6 +78,14 @@ export const AdminRoom: React.FC = () => {
           {questions.filter(q => q.isAnswered === false).length === 1 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta</span>}
           {questions.filter(q => q.isAnswered === false).length > 1 && <span>{questions.filter(q => q.isAnswered === false).length} perguntas</span>}
         </Title>
+        <Select
+          name="Ordened"
+          id="Ordened"
+        >
+          <option value="new">Mais recentes</option>
+          <option value="old">Mais antigas</option>
+          <option value="likes">Mais curtidas</option>
+        </Select>
         {/* Perguntas destacadas */}
         <QuestionList>
           {questions.filter(q => q.isHightlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
