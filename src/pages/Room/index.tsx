@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import { useRoom } from '../../hooks/useRoom'
@@ -12,6 +12,8 @@ import EmptyQuestions from '../../assets/images/empty-questions.svg'
 import { database } from '../../services/firebase'
 
 import { Container, Main, Title, Form, QuestionList, NoQuestions } from './styles'
+import { Toaster } from 'react-hot-toast'
+import { ThemeContext } from 'styled-components'
 
 type RoomParams = {
   id: string
@@ -25,6 +27,8 @@ export const Room: React.FC = () => {
 
   const roomId = params.id
   const { questions, title } = useRoom(roomId)
+
+  const { colors } = useContext(ThemeContext)
 
   async function handleSendQuestion (event: FormEvent) {
     event.preventDefault()
@@ -57,12 +61,40 @@ export const Room: React.FC = () => {
 
   return (
     <Container>
+      <Toaster
+        toastOptions={{
+          success: {
+            style: {
+              borderRadius: '8px',
+              backgroundColor: colors.textAreaColor,
+              color: colors.textTitleColor,
+              boxShadow: 'none'
+            },
+            iconTheme: {
+              primary: '#2fd373',
+              secondary: colors.textAreaColor
+            }
+          },
+          error: {
+            style: {
+              borderRadius: '8px',
+              backgroundColor: colors.textAreaColor,
+              color: colors.textTitleColor,
+              boxShadow: 'none'
+            },
+            iconTheme: {
+              primary: '#e73f5d',
+              secondary: colors.textAreaColor
+            }
+          }
+        }}
+      />
       <Header roomId={roomId}/>
       <Main>
         <Title>
-          <h1>Sala {title}</h1>
-          {questions.filter(q => q.isAnswered === false).length === 1 && <span>{questions.filter(q => q.isAnswered === false).length} pergunta</span>}
-          {questions.filter(q => q.isAnswered === false).length > 1 && <span>{questions.filter(q => q.isAnswered === false).length} perguntas</span>}
+          <h1>{title}</h1>
+          {questions.length === 1 && <span>{questions.length} pergunta</span>}
+          {questions.length > 1 && <span>{questions.length} perguntas</span>}
         </Title>
         <Form onSubmit={handleSendQuestion}>
           <textarea
