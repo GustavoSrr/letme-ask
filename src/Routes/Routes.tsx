@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTheme } from '../hooks/useTheme'
+import { AuthContextProvider } from '../contexts/AuthContext'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 import { Home } from '../pages/Home/index'
@@ -8,11 +10,8 @@ import { AdminRoom } from '../pages/AdminRoom/index'
 
 import { NotFound } from '../pages/NotFound/index'
 
-import { AuthContextProvider } from '../contexts/AuthContext'
-
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../styles/global'
-import { useTheme } from '../hooks/useTheme'
 
 export function Routes () {
   const { theme } = useTheme()
