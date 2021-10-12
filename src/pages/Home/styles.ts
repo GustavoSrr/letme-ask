@@ -46,6 +46,13 @@ export const Main = styled.main`
   flex: 8;
 
   padding: 0 32px;
+
+  #HomeThemeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 16px;
+  }
 `
 
 export const Content = styled.div`
