@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 24px;
+  margin: 0 20px;
 `
 
 export const Content = styled.div`
@@ -18,7 +19,13 @@ export const Content = styled.div`
 
   > div {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 2px;
+
+    button {
+      padding: 16px;
+    }
   }
 
   #EndRoomBtn {
@@ -41,10 +48,11 @@ export const Main = styled.main`
 export const Title = styled.div`
   margin: 32px 0 24px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  word-break: break-all;
 
   > span {
-    margin-left: 16px;
+    width: fit-content;
     background-color: var(--secundaryColor);
     border-radius: 9999px;
     padding: 8px 16px;
