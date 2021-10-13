@@ -12,7 +12,7 @@ import EmptyQuestions from '../../assets/images/empty-questions.svg'
 import { database } from '../../services/firebase'
 
 import { Container, Main, Title, Form, QuestionList, NoQuestions } from './styles'
-import { Toaster } from 'react-hot-toast'
+import { Toaster, toast } from 'react-hot-toast'
 import { ThemeContext } from 'styled-components'
 
 type RoomParams = {
@@ -34,6 +34,8 @@ export const Room: React.FC = () => {
     event.preventDefault()
 
     if (newQuestion.trim() === '') return
+    if (newQuestion.trim().length > 2000) return toast.error('Sua pergunta não pode passar de 2.000 caracteres.')
+
     if (!user) throw new Error('Você não está logado')
 
     const question = {

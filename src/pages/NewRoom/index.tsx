@@ -11,7 +11,7 @@ import Illustration from '../../assets/images/illustration.svg'
 
 import { Container, Aside, Content, Main, Form } from './styles'
 import { useTheme } from '../../hooks/useTheme'
-import { Toaster } from 'react-hot-toast'
+import toast, { Toaster } from 'react-hot-toast'
 import { ThemeContext } from 'styled-components'
 
 export const NewRoom: React.FC = () => {
@@ -25,6 +25,7 @@ export const NewRoom: React.FC = () => {
     event.preventDefault()
 
     if (newRoom.trim() === '') return
+    if (newRoom.trim().length > 50) return toast.error('A sala não pode passar de 50 caracteres.')
 
     const roomRef = database.ref('rooms')
     const firebaseRoom = await roomRef.push({
@@ -90,6 +91,7 @@ export const NewRoom: React.FC = () => {
               placeholder="Nome da sala"
               value={newRoom}
               onChange={(event) => setNewRoom(event.target.value)}
+              maxLength={50}
               required
             />
             <Button type="submit">Criar sala</Button>
