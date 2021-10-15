@@ -4,7 +4,7 @@ export const Container = styled.header`
   position: sticky;
   top: 0;
   background-color: var(--backgroundColor);
-  padding: 16px;
+  padding: 16px 25px;
   width: 100%;
 `
 
