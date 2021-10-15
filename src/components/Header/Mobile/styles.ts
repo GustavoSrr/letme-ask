@@ -5,6 +5,10 @@ export const Container = styled.header`
   top: 0;
   background-color: var(--backgroundColor);
   padding: 24px;
+
+  @media only screen and (min-width: 1000px) {
+    display: none;
+  }
 `
 
 export const Content = styled.div`
