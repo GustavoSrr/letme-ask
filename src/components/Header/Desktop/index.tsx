@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Button } from '../Button/index'
-import { RoomCode } from '../RoomCode/index'
-import { Logo } from '../Logo/index'
+import { Button } from '../../Button/index'
+import { RoomCode } from '../../RoomCode/index'
+import { Logo } from '../../Logo/index'
 
 import { Container, Content } from './styles'
-import { useTheme } from '../../hooks/useTheme'
+import { useTheme } from '../../../hooks/useTheme'
 
 type Props = {
   roomId: string;
