@@ -4,7 +4,8 @@ export const Container = styled.header`
   position: sticky;
   top: 0;
   background-color: var(--backgroundColor);
-  padding: 24px;
+  padding: 16px;
+  width: 100%;
 `
 
 export const Content = styled.div`
@@ -18,7 +19,7 @@ export const Content = styled.div`
     max-height: 45px;
   }
 
-  > div {
+  .Desktop {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,17 +28,64 @@ export const Content = styled.div`
     button {
       padding: 16px;
     }
+
+    @media only screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 
+  .Mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+    #MenuBtn {
+      svg {
+        fill: var(--primaryColor);
+      }
+
+      &:focus ~ #MenuContent {
+        display: unset;
+      }
+    }
+
+    #MenuContent {
+      display: none;
+      position: absolute;
+      top: 0;
+      margin: 16px;
+
+      background-color: var(--backgroundColor);
+      border: 1px solid var(--borderColor);
+      border-radius: 16px;
+      padding: 6px;
+
+      button {
+        padding: 12px;
+      }
+
+      &:hover {
+        display: unset;
+      }
+    }
+
+    @media only screen and (min-width: 1000px) {
+      display: none;
+    }
+  }
 
   #EndRoomBtn {
-    margin-left: 14px;
     background: transparent;
     border: 1px solid var(--dangerColor);
     color: var(--dangerColor);
 
     &:hover {
       background-color: var(--dangerColorTransparent);
+    }
+
+    @media only screen and (min-width: 1000px) {
+      margin-left: 8px;
     }
   }
 `
