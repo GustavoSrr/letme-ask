@@ -46,6 +46,7 @@
   - [x] 📼 | Variáveis para cores no Css
   - [x] 😨 | Página 404
   - [x] 🌓 | Tema dark/light
+  - [-] 📱 | Responsividade
 
 ## ⬇ Como instalar?
 
