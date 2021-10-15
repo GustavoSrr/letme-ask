@@ -11,7 +11,7 @@ type Props = {
   roomId: string;
 }
 
-export const Header: React.FC<Props> = ({ roomId }) => {
+export const DesktopHeader: React.FC<Props> = ({ roomId }) => {
   const { toggleTheme } = useTheme()
 
   return (
