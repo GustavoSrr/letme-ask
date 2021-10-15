@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Container = styled.div`
   min-height: 100vh;
   padding-bottom: 24px;
-  margin: 0 20px;
 `
 
 export const Content = styled.div`
@@ -32,6 +31,7 @@ export const Content = styled.div`
 export const Main = styled.main`
   max-width: 800px;
   margin: 0 auto;
+  padding: 0 20px;
 `
 
 export const Title = styled.div`
