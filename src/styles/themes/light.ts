@@ -12,6 +12,6 @@ export default {
     textAreaColor: '#fefefe',
 
     hightlighColor: '#f4f0ff',
-    answeredColor: '#dbdcdd'
+    answeredColor: '#efefef'
   }
 }
