@@ -5,8 +5,7 @@ import { useRoom } from '../../hooks/useRoom'
 
 import { Button } from '../../components/Button/index'
 import { Question } from '../../components/Question/index'
-import { DesktopHeader } from '../../components/Header/Desktop'
-import { MobileHeader } from '../../components/Header/Mobile'
+import { Header } from '../../components/Header/index'
 
 import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
@@ -37,7 +36,7 @@ export const Room: React.FC = () => {
     if (newQuestion.trim() === '') return
     if (newQuestion.trim().length > 2000) return toast.error('Sua pergunta não pode passar de 2.000 caracteres.')
 
-    if (!user) throw new Error('Você não está logado')
+    if (!user) return toast.error('Você não está logado.')
 
     const question = {
       content: newQuestion,
@@ -48,7 +47,9 @@ export const Room: React.FC = () => {
       isHightlighted: false,
       isAnswered: false
     }
-    await database.ref(`rooms/${roomId}/questions`).push(question)
+    await database.ref(`rooms/${roomId}/questions`).push(question).then(() => {
+      toast.success('Pergunta enviada.')
+    })
     setNewQuestion('')
   }
 
@@ -92,8 +93,7 @@ export const Room: React.FC = () => {
           }
         }}
       />
-      <DesktopHeader roomId={roomId}/>
-      <MobileHeader roomId={roomId} />
+      <Header roomId={roomId} />
       <Main>
         <Title>
           <h1>{title}</h1>
