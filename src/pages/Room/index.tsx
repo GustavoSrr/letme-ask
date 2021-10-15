@@ -7,6 +7,7 @@ import { useRoom } from '../../hooks/useRoom'
 import { Button } from '../../components/Button/index'
 import { Question } from '../../components/Question/index'
 import { Header } from '../../components/Header/index'
+import { Footer } from '../../components/Footer/index'
 
 import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
@@ -220,6 +221,7 @@ export const Room: React.FC = () => {
           </QuestionList>
         </Main>
       </Container>
+      <Footer />
     </>
   )
 }

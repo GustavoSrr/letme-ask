@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet'
 import { Question } from '../../components/Question/index'
 import { AdminHeader } from '../../components/AdminHeader'
 import { toast, Toaster } from 'react-hot-toast'
+import { Footer } from '../../components/Footer/index'
 
 import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
@@ -80,7 +81,7 @@ export const AdminRoom: React.FC = () => {
   return (
     <>
       <Helmet>
-          <title>Adm | {title}</title>
+        <title>{title}</title>
       </Helmet>
       <Container>
         <Toaster
@@ -114,7 +115,7 @@ export const AdminRoom: React.FC = () => {
         <AdminHeader roomId={roomId} />
         <Main>
           <Title>
-            <h1>Administrador | {title}</h1>
+            <h1>{title}</h1>
             {questions.length === 1 && <span>{questions.length} pergunta</span>}
             {questions.length > 1 && <span>{questions.length} perguntas</span>}
           </Title>
@@ -269,6 +270,7 @@ export const AdminRoom: React.FC = () => {
           </QuestionList>
         </Main>
       </Container>
+      <Footer />
     </>
   )
 }
