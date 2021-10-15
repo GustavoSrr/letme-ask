@@ -97,6 +97,7 @@ export function AdminHeader ({ roomId }: AdminHeaderProps) {
             </Button>
             <RoomCode code={roomId} mobile/>
             <Button
+              title="Encerrar sala"
               id="EndRoomBtn"
               outlined
               rounded
