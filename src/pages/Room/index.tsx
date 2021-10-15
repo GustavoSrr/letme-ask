@@ -5,7 +5,8 @@ import { useRoom } from '../../hooks/useRoom'
 
 import { Button } from '../../components/Button/index'
 import { Question } from '../../components/Question/index'
-import { Header } from '../../components/Header'
+import { DesktopHeader } from '../../components/Header/Desktop'
+import { MobileHeader } from '../../components/Header/Mobile'
 
 import EmptyQuestions from '../../assets/images/empty-questions.svg'
 
@@ -91,7 +92,8 @@ export const Room: React.FC = () => {
           }
         }}
       />
-      <Header roomId={roomId}/>
+      <DesktopHeader roomId={roomId}/>
+      <MobileHeader roomId={roomId} />
       <Main>
         <Title>
           <h1>{title}</h1>
