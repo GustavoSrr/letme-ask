@@ -66,7 +66,7 @@ export const NewRoom: React.FC = () => {
         }}
       />
       <Aside>
-        <img src={Illustration} alt="Ilustração da home" />
+        <img src={Illustration} alt="Ilustração da home" draggable={false}/>
         <strong>Toda pergunta tem uma resposta.</strong>
         <p>Aprenda e compartilhe conhecimento com outras pessoas.</p>
       </Aside>
