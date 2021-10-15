@@ -6,7 +6,8 @@ import { Button } from '../Button/index'
 import { Container } from './styles'
 
 type RoomCodeProps = {
-  code: string
+  code: string;
+  mobile?: boolean;
 }
 
 export function RoomCode (props: RoomCodeProps) {
@@ -17,7 +18,7 @@ export function RoomCode (props: RoomCodeProps) {
   }
 
   return (
-    <Container>
+    <Container className={props.mobile ? 'Mobile' : ''}>
       <Button
         title="Compartilhar"
         rounded
