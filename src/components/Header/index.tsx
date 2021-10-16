@@ -7,9 +7,10 @@ import { Button } from '../Button/index'
 import { RoomCode } from '../RoomCode/index'
 import { Logo } from '../Logo/index'
 
-import { Container, Content, Logout } from './styles'
 import { firebase } from '../../services/firebase'
 import toast from 'react-hot-toast'
+
+import { Container, Content, Logout } from './styles'
 
 type Props = {
   roomId: string;
