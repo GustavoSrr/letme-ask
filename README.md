@@ -47,7 +47,7 @@
   - [x] 😨 | Página 404
   - [x] 🌓 | Tema dark/light
   - [x] 📤 | Opção de LogOut
-  - [] 📱 | Responsividade
+  - [x] 📱 | Responsividade
 
 ## ⬇ Como instalar?
 
