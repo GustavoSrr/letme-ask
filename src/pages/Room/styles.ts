@@ -142,6 +142,11 @@ export const QuestionList = styled.div`
   > svg {
     margin: 0 auto;
   }
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `
 
 export const NoQuestions = styled.div`
