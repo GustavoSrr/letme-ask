@@ -22,7 +22,7 @@ type RoomParams = {
 }
 
 export const Room: React.FC = () => {
-  const { user } = useAuth()
+  const { user, signInGoogle } = useAuth()
 
   const params = useParams<RoomParams>()
   const [newQuestion, setNewQuestion] = useState('')
@@ -62,6 +62,12 @@ export const Room: React.FC = () => {
       await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
         authorId: user?.id
       })
+    }
+  }
+
+  async function handleSignInGoogle () {
+    if (!user) {
+      await signInGoogle()
     }
   }
 
@@ -124,7 +130,7 @@ export const Room: React.FC = () => {
                   </div>
                   )
                 : (
-                  <span>Para enviar uma pergunta <button>faça o login</button>.</span>
+                  <span>Para enviar uma pergunta <button type="button" onClick={() => handleSignInGoogle()}>faça o login</button>.</span>
                   )
               }
               <Button
