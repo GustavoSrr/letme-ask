@@ -23,7 +23,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
+    gap: 5px;
 
     button {
       padding: 16px;
@@ -72,6 +72,39 @@ export const Content = styled.div`
 
     @media only screen and (min-width: 1000px) {
       display: none;
+    }
+  }
+`
+
+export const Logout = styled.div`
+  border-radius: 50%;
+  background-color: var(--dangerColorTransparent);
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+
+  button {
+    background-color: transparent;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+      padding: 0;
+      margin: 0;
+      border: 1.5px solid var(--dangerColorTransparent);
+
+      &:hover {
+        border-color: var(--dangerColor);
+      }
     }
   }
 `

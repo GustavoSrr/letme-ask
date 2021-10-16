@@ -1,11 +1,15 @@
 import React from 'react'
+import { useHistory } from 'react-router'
+import { useTheme } from '../../hooks/useTheme'
+import { useAuth } from '../../hooks/useAuth'
 
 import { Button } from '../Button/index'
 import { RoomCode } from '../RoomCode/index'
 import { Logo } from '../Logo/index'
 
-import { Container, Content } from './styles'
-import { useTheme } from '../../hooks/useTheme'
+import { Container, Content, Logout } from './styles'
+import { firebase } from '../../services/firebase'
+import toast from 'react-hot-toast'
 
 type Props = {
   roomId: string;
@@ -13,6 +17,20 @@ type Props = {
 
 export const Header: React.FC<Props> = ({ roomId }) => {
   const { toggleTheme } = useTheme()
+  const { user } = useAuth()
+  const history = useHistory()
+
+  async function handleLogOutGoogle () {
+    if (window.confirm('Tem certeza que deseja deslogar?')) {
+      try {
+        firebase.auth().signOut().then(() => {
+          history.push('/')
+        })
+      } catch (e) {
+        toast.error('Ocorreu um erro.')
+      }
+    }
+  }
 
   return (
     <Container>
@@ -30,6 +48,18 @@ export const Header: React.FC<Props> = ({ roomId }) => {
             </svg>
           </Button>
           <RoomCode code={roomId} />
+            {user
+              ? (
+                <Logout>
+                  <button title="Deslogar" onClick={() => handleLogOutGoogle()}>
+                    <img src={user.avatar} alt={user.name} />
+                  </button>
+                </Logout>
+                )
+              : (
+                  ''
+                )
+            }
         </div>
         <div className="Mobile">
           <Button
