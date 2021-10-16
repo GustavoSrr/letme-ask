@@ -15,10 +15,10 @@
 
 ## 📡 Tecnologias
 
-  - HTML
   - Styled Components
   - TypeScript
   - React
+
 ## 🤓 Aprendizado
 
   - #### 🆔 | **Autenticação com Firebase**
@@ -53,18 +53,11 @@
 
   ### Clonando o repositório
 
-  ```
+  ```bash
+  # Clone este repositório
   git clone https://github.com/GustavoSrr/letme-ask.git
-  ```
-
-  ### Entrando na pasta criada
-
-  ```
+  # Entre na pasta gerada
   cd letme-ask
-  ```
-
-  ### Instalando as dependências
-
-  ```
+  # Instale as dependências usadas
   npm i
-  ```
+```
