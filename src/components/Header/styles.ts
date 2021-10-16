@@ -46,7 +46,7 @@ export const Content = styled.div`
       }
 
       &:focus ~ #MenuContent {
-        display: unset;
+        display: flex;
       }
     }
 
@@ -55,6 +55,9 @@ export const Content = styled.div`
       position: absolute;
       top: 0;
       margin: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
 
       background-color: var(--backgroundColor);
       border: 1px solid var(--borderColor);
@@ -66,7 +69,7 @@ export const Content = styled.div`
       }
 
       &:hover {
-        display: unset;
+        display: flex;
       }
     }
 
@@ -105,6 +108,22 @@ export const Logout = styled.div`
       &:hover {
         border-color: var(--dangerColor);
       }
+
+      @media only screen and (max-width: 1000px) {
+        height: 40px;
+        width: 40px;
+      }
     }
+
+    @media only screen and (max-width: 1000px) {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    margin-top: 5px;
+    height: 40px;
+    width: 40px;
   }
 `

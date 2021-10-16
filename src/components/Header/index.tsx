@@ -48,18 +48,18 @@ export const Header: React.FC<Props> = ({ roomId }) => {
             </svg>
           </Button>
           <RoomCode code={roomId} />
-            {user
-              ? (
-                <Logout>
-                  <button title="Deslogar" onClick={() => handleLogOutGoogle()}>
-                    <img src={user.avatar} alt={user.name} />
-                  </button>
-                </Logout>
-                )
-              : (
-                  ''
-                )
-            }
+          {user
+            ? (
+              <Logout>
+                <button title="Deslogar" onClick={() => handleLogOutGoogle()}>
+                  <img src={user.avatar} alt={user.name} />
+                </button>
+              </Logout>
+              )
+            : (
+                ''
+              )
+          }
         </div>
         <div className="Mobile">
           <Button
@@ -85,6 +85,18 @@ export const Header: React.FC<Props> = ({ roomId }) => {
               </svg>
             </Button>
             <RoomCode code={roomId} mobile/>
+            {user
+              ? (
+              <Logout>
+                <button title="Deslogar" onClick={() => handleLogOutGoogle()}>
+                  <img src={user.avatar} alt={user.name} />
+                </button>
+              </Logout>
+                )
+              : (
+                  ''
+                )
+            }
           </div>
         </div>
       </Content>
