@@ -11,7 +11,8 @@
       - [Realtime Database](#--realtime-database)
       - [Styled Components](#--styled-components)
   3. [Adições feitas](#-adiciões-feitas)
-  4. [Como instalar](#-como-instalar)
+  4. [Veja o projeto](#-veja-o-projeto-agora-mesmo)
+  5. [Instalação](#-quer-instalar)
 
 ## 📡 Tecnologias
 
@@ -49,10 +50,11 @@
   - [x] 📤 | Opção de LogOut
   - [x] 📱 | Responsividade
 
-## ⬇ Como instalar?
+## 🚀 Veja o projeto agora mesmo!
 
-  ### Clonando o repositório
+  Já que o projeto está hospedado no Firebase, você pode interagir com o projeto [clicando aqui](https://letme-4sk.web.app/).
 
+## ⬇ Quer instalar?
   ```bash
   # Clone este repositório
   git clone https://github.com/GustavoSrr/letme-ask.git
