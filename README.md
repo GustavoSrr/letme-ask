@@ -1,4 +1,6 @@
-# 💬 Let me Ask (🚧)
+<h1 align="center">💬 Letme Ask</h1>
+
+<img align="center" src="https://letme-4sk.web.app/assets/screenshot.png" />
 
 > O projeto do Next Level Week Together (React), o evento da Rocketseat. O projeto consiste em "fóruns", em que você cria uma sala, que outras pessoas podem entrar, para responder as dúvidas da galera.
 
