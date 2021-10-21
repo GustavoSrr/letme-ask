@@ -11,12 +11,12 @@ export const Container = styled.footer`
 
   a {
     margin-left: 5px;
-    color: var(--secundaryColor);
+    color: var(--secondaryColor);
     text-decoration: none;
-    border-bottom: 1px solid var(--secundaryColorTransparent);
+    border-bottom: 1px solid var(--secondaryColorTransparent);
 
     &:hover {
-      border-color: var(--secundaryColor);
+      border-color: var(--secondaryColor);
     }
   }
 `

@@ -18,7 +18,7 @@ type Theme = {
     textAccentColor: string;
     textAreaColor: string;
 
-    hightlighColor: string;
+    highlighColor: string;
     answeredColor: string;
   }
 }

@@ -85,7 +85,7 @@ export const Content = styled.div`
     margin-top: 16px;
 
     a {
-      color: var(--secundaryColor);
+      color: var(--secondaryColor);
     }
   }
 `

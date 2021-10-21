@@ -9,8 +9,8 @@ export const Container = styled.div`
     margin-top: 8px;
   }
 
-  &.Hightlighted {
-    background-color: var(--hightlighColor);
+  &.Highlighted {
+    background-color: var(--highlighColor);
     border: 1px solid var(--borderColor);
 
     footer .UserInfo span {

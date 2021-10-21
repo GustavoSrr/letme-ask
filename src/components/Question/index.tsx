@@ -11,7 +11,7 @@ type QuestionProps = {
   },
   children?: ReactNode,
   isAnswered?: boolean,
-  isHightlighted?: boolean,
+  isHighlighted?: boolean,
 }
 
 export function Question ({
@@ -19,13 +19,13 @@ export function Question ({
   author,
   children,
   isAnswered = false,
-  isHightlighted = false
+  isHighlighted = false
 }: QuestionProps) {
   return (
     <Container className={clss(
       'Question',
       { Answered: isAnswered },
-      { Hightlighted: isHightlighted && !isAnswered }
+      { Highlighted: isHighlighted && !isAnswered }
     )}>
       <pre>{content}</pre>
       <Footer>

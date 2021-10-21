@@ -46,7 +46,7 @@ export const Room: React.FC = () => {
         name: user.name,
         avatar: user.avatar
       },
-      isHightlighted: false,
+      isHighlighted: false,
       isAnswered: false
     }
     await database.ref(`rooms/${roomId}/questions`).push(question).then(() => {
@@ -149,16 +149,16 @@ export const Room: React.FC = () => {
           </Form>
           {/* Perguntas destacadas */}
           <QuestionList>
-            {questions.filter(q => q.isHightlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
+            {questions.filter(q => q.isHighlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
             {questions
               ? (
-                  questions.filter(question => question.isHightlighted === true && question.isAnswered === false).reverse().map(quest => {
+                  questions.filter(question => question.isHighlighted === true && question.isAnswered === false).reverse().map(quest => {
                     return (
                       <Question
                         content={quest.content}
                         author={quest.author}
                         isAnswered={quest.isAnswered}
-                        isHightlighted={quest.isHightlighted}
+                        isHighlighted={quest.isHighlighted}
                         key={quest.id}
                       >
                         {!quest.isAnswered && (
@@ -183,16 +183,16 @@ export const Room: React.FC = () => {
           </QuestionList>
           {/* Todas perguntas */}
           <QuestionList>
-            {questions.filter(q => q.isHightlighted === false && q.isAnswered === false).length > 0 && <h1>Todas perguntas</h1>}
+            {questions.filter(q => q.isHighlighted === false && q.isAnswered === false).length > 0 && <h1>Todas perguntas</h1>}
             {questions[0]
               ? (
-                  questions.filter(question => question.isHightlighted === false && question.isAnswered === false).reverse().map(quest => {
+                  questions.filter(question => question.isHighlighted === false && question.isAnswered === false).reverse().map(quest => {
                     return (
                       <Question
                         content={quest.content}
                         author={quest.author}
                         isAnswered={quest.isAnswered}
-                        isHightlighted={quest.isHightlighted}
+                        isHighlighted={quest.isHighlighted}
                         key={quest.id}
                       >
                         {!quest.isAnswered && (
@@ -231,7 +231,7 @@ export const Room: React.FC = () => {
                         content={quest.content}
                         author={quest.author}
                         isAnswered={quest.isAnswered}
-                        isHightlighted={quest.isHightlighted}
+                        isHighlighted={quest.isHighlighted}
                         key={quest.id}
                       />
                     )

@@ -14,7 +14,7 @@ declare module 'styled-components' {
       textAccentColor: string;
       textAreaColor: string;
 
-      hightlighColor: string;
+      highlighColor: string;
       answeredColor: string;
     }
   }

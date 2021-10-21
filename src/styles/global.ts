@@ -6,10 +6,10 @@ export const GlobalStyle = createGlobalStyle`
     --primaryColorHover: #4C98CF;
     --primaryColorTransparent: rgba(85, 169, 231, 0.15);
     --primaryFocusColorTransparent: rgba(85, 169, 231, 0.25);
-    --secundaryColor: #E86DE1;
-    --secundaryColorHover: #CF61C9;
-    --secundaryColorTransparent: rgba(232, 109, 225, 0.15);
-    --secundaryFocusColorTransparent: rgba(232, 109, 225, 0.25);
+    --secondaryColor: #E86DE1;
+    --secondaryColorHover: #CF61C9;
+    --secondaryColorTransparent: rgba(232, 109, 225, 0.15);
+    --secondaryFocusColorTransparent: rgba(232, 109, 225, 0.25);
 
     --grayColor: #d5d5d5;
     --blueColor: #206CE8;
@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
     --textAccentColor: ${props => props.theme.colors.textAccentColor};
     --textAreaColor: ${props => props.theme.colors.textAreaColor};
 
-    --hightlighColor: ${props => props.theme.colors.hightlighColor};
+    --highlighColor: ${props => props.theme.colors.highlighColor};
     --answeredColor: ${props => props.theme.colors.answeredColor};
   }
 

@@ -43,10 +43,10 @@ export const AdminRoom: React.FC = () => {
   async function handleHightlightQuestion (questionId: string) {
     const getQuestion = await database.ref(`rooms/${roomId}/questions/${questionId}`).get()
 
-    if ((await getQuestion).val().isHightlighted === false) {
+    if ((await getQuestion).val().isHighlighted === false) {
       try {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-          isHightlighted: true
+          isHighlighted: true
         }).then(() => {
           toast.success('Destaque adicionado.')
         })
@@ -56,7 +56,7 @@ export const AdminRoom: React.FC = () => {
     } else {
       try {
         await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
-          isHightlighted: false
+          isHighlighted: false
         }).then(() => {
           toast.success('Destaque removido.')
         })
@@ -121,16 +121,16 @@ export const AdminRoom: React.FC = () => {
           </Title>
           {/* Perguntas destacadas */}
           <QuestionList>
-            {questions.filter(q => q.isHightlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
+            {questions.filter(q => q.isHighlighted === true && q.isAnswered === false).length > 0 && <h1>Perguntas Destacadas</h1>}
             {questions
               ? (
-                  questions.filter(question => question.isHightlighted === true && question.isAnswered === false).reverse().map(quest => {
+                  questions.filter(question => question.isHighlighted === true && question.isAnswered === false).reverse().map(quest => {
                     return (
                       <Question
                         content={quest.content}
                         author={quest.author}
                         isAnswered={quest.isAnswered}
-                        isHightlighted={quest.isHightlighted}
+                        isHighlighted={quest.isHighlighted}
                         key={quest.id}
                       >
                         {!quest.isAnswered && (
@@ -180,15 +180,15 @@ export const AdminRoom: React.FC = () => {
           </QuestionList>
           {/* Todas perguntas */}
           <QuestionList>
-            {questions.filter(q => q.isHightlighted === false).length > 0 && <h1>Todas perguntas</h1>}
+            {questions.filter(q => q.isHighlighted === false).length > 0 && <h1>Todas perguntas</h1>}
             {questions[0]
               ? (
-                  questions.filter(question => question.isHightlighted === false && question.isAnswered === false).reverse().map(quest => {
+                  questions.filter(question => question.isHighlighted === false && question.isAnswered === false).reverse().map(quest => {
                     return (
                     <Question content={quest.content}
                       author={quest.author}
                       isAnswered={quest.isAnswered}
-                      isHightlighted={quest.isHightlighted}
+                      isHighlighted={quest.isHighlighted}
                       key={quest.id}
                     >
                       {!quest.isAnswered && (
@@ -249,7 +249,7 @@ export const AdminRoom: React.FC = () => {
                       content={quest.content}
                       author={quest.author}
                       isAnswered={quest.isAnswered}
-                      isHightlighted={quest.isHightlighted}
+                      isHighlighted={quest.isHighlighted}
                       key={quest.id}
                     >
                       <button

@@ -42,7 +42,7 @@ export const Title = styled.div`
 
   > span {
     width: fit-content;
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-radius: 9999px;
     padding: 8px 16px;
     color: white;
@@ -78,21 +78,21 @@ export const Form = styled.form`
 
     #SendBtn {
       background-color: transparent;
-      color: var(--secundaryColor);
+      color: var(--secondaryColor);
 
       &:hover {
-        background-color: var(--secundaryColorTransparent);
+        background-color: var(--secondaryColorTransparent);
       }
 
       &:active {
-        background-color: var(--secundaryFocusColorTransparent);
+        background-color: var(--secondaryFocusColorTransparent);
       }
 
       > svg {
         fill: transparent;
 
         path {
-          stroke: var(--secundaryColor)
+          stroke: var(--secondaryColor)
         }
       }
     }
@@ -123,7 +123,7 @@ export const Form = styled.form`
       button {
         background-color: transparent;
         border: 0 none;
-        color: var(--secundaryColor);
+        color: var(--secondaryColor);
         text-decoration: underline;
         font-size: 14px;
         font-weight: 500;

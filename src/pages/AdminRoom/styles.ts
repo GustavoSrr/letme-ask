@@ -53,7 +53,7 @@ export const Title = styled.div`
 
   > span {
     width: fit-content;
-    background-color: var(--secundaryColor);
+    background-color: var(--secondaryColor);
     border-radius: 9999px;
     padding: 8px 16px;
     color: white;

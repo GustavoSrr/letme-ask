@@ -11,7 +11,7 @@ export default {
     textAccentColor: '#e5def7',
     textAreaColor: '#fefefe',
 
-    hightlighColor: '#f4f0ff',
+    highlighColor: '#f4f0ff',
     answeredColor: '#efefef'
   }
 }
